@@ -5,11 +5,9 @@ import Cadastro from './pages/Cadastro'
 import Sobre from './pages/Sobre'
 import './App.css'
 
-
 export default function App() {
 
   return (
-
     <>
       <BrowserRouter>
         <Routes>
@@ -20,7 +18,6 @@ export default function App() {
         </Routes>
       </BrowserRouter>
     </>
-
   )
 }
 
