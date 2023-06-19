@@ -1,12 +1,12 @@
 import './App.css'
-import Footer from './components/estaticos/footer/Footer'
 
-function App() {
+
+export default function App() {
+
+
   return (
-    <>
-      <Footer />
-    </>
+
+    <></>
   )
 }
 
-export default App
