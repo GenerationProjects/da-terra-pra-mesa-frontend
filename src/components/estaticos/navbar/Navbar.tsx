@@ -1,6 +1,6 @@
 import { AppBar, Box, Toolbar, Typography } from "@material-ui/core";
 import { Link } from 'react-router-dom'
-import Radish from '../../../assets/radish-svgrepo-com_1.svg'
+import Radish from '../../../assets/img/radish-svgrepo-com_1.svg'
 import './Navbar.css'
 
 function Navbar() {

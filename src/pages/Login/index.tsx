@@ -1,6 +1,6 @@
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import ImgLogin from "../../assets/Desenho.svg";
+import ImgLogin from "../../assets/img/Desenho.svg";
 import "./style.css";
 
 export default function Login() {
