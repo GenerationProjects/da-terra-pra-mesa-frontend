@@ -1,0 +1,15 @@
+
+.boxLogin{
+
+    background-color: #F6F8E8 !important;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
