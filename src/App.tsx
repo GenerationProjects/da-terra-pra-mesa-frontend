@@ -6,7 +6,6 @@ import Sobre from './pages/Sobre'
 import './App.css'
 
 export default function App() {
-
   return (
     <>
       <BrowserRouter>
@@ -20,4 +19,3 @@ export default function App() {
     </>
   )
 }
-

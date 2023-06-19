@@ -1,0 +1,15 @@
+.container {
+    background-color: #D5E4AD;
+    height: 70vh;
+    margin: 2.5vh;
+    margin-left: 2.5vh;
+    border-radius: 10px;
+}
+
+.texts {
+    color: #2F3912;
+}
+
+.item-img {
+    align-items: center;
+}

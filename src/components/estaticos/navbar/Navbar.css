@@ -1,8 +1,15 @@
-.cursor{
+.cursor {
+
     cursor: pointer;
     background-color: #d5e1ad
 }
 
-.text-decorator-none{
+.text-decorator-none {
     text-decoration: none;
+}
+
+.img-home {
+    height: 10vh;
+    width: 50vh;
+
 }
