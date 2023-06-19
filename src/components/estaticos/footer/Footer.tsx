@@ -22,13 +22,13 @@ function Footer() {
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center">
-              <a href="">
+              <a href="https://www.linkedin.com/">
                 <LinkedInIcon className="redes" />
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/">
                 <InstagramIcon className="redes" />
               </a>
-              <a href="">
+              <a href="https://www.facebook.com/">
                 <FacebookIcon className="redes" />
               </a>
             </Box>
