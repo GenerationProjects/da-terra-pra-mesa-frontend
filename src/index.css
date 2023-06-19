@@ -6,7 +6,10 @@
     padding: 0;
 =======
 * {
-    padding: 0;
     margin: 0;
+<<<<<<< HEAD
 >>>>>>> f80bc6b (Criação das Rotas e página home)
+=======
+    padding: 0;
+>>>>>>> 093128b (Criação da rotas, inicialização das páginas sobre, login e Cadastro)
 }
