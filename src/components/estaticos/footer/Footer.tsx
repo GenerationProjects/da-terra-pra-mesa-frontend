@@ -17,6 +17,7 @@ function Footer() {
         <Grid alignContent="center" item xs={12}>
           <Box className='box1'>
             <Box display="flex" alignItems='center' justifyContent='center'>
+              
               <Typography variant="h5" align="center" gutterBottom className='textos'>
                 Siga-nos nas redes sociais
               </Typography>
