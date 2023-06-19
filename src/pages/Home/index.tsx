@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Typography } from "@material-ui/core";
-import FruitShop from '../../assets/fruit_shop-pana_1.svg'
+import FruitShop from '../../assets/img/fruit_shop-pana_1.svg'
 import './style.css'
 
 export default function Home() {
@@ -23,7 +23,6 @@ export default function Home() {
                     </Box>
                 </Grid>
             </Grid>
-
         </>
     )
 }
