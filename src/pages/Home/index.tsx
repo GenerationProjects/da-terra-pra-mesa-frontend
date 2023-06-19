@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-=======
 import { Box, Button, Grid, Typography } from "@material-ui/core";
 import FruitShop from '../../assets/fruit_shop-pana_1.svg'
->>>>>>> 931ccf3 (Criando conponente home)
 import './style.css'
 
 export default function Home() {
     return (
         <>
-<<<<<<< HEAD
-=======
             <Grid container xs={12} direction="row" justifyContent="center" alignItems="center" className="container">
                 <Grid item sm={6} >
                     <Box paddingX={20}>
@@ -28,7 +23,7 @@ export default function Home() {
                     </Box>
                 </Grid>
             </Grid>
->>>>>>> 931ccf3 (Criando conponente home)
+
         </>
     )
 }
