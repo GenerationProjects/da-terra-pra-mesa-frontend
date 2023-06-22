@@ -1,47 +1,49 @@
 import { AppBar, Box, Toolbar, Typography } from "@material-ui/core";
-import { Link } from 'react-router-dom'
-import Radish from '../../../assets/img/radish-svgrepo-com_1.svg'
-import './Navbar.css'
+import { Link } from "react-router-dom";
+import FotoFazendeiro from "../../../assets/img/farmer.svg";
+import FotoLogo from "../../../assets/img/logo.svg";
+import "./Navbar.css";
 
 function Navbar() {
   return (
     <>
-      <AppBar position="static" style={{ backgroundColor: "#d5e1ad" }}>
-        <Toolbar variant="dense" >
-          <Box className="cursor">
-            <Typography variant="h5" color="inherit">
-              <img src={Radish} alt="Rabanete das cores verde claro" className="img-home"/>
-            </Typography>
+      <AppBar position="static" style={{ backgroundColor: "#d5e4ad" }}>
+        <Toolbar variant="dense">
+
+          <Box className="imgNav">
+            <img src={FotoLogo} alt="Foto Logo" className="img-home" />
           </Box>
 
-          <Box display="flex" justifyContent="end">
-            <Link to={`/`} className="text-decorator-none">
-              <Box mx={1} className="cursor">
-                <Typography variant="h6" color="inherit">
-                  Home
-                </Typography>
-              </Box>
-            </Link>
-
+          <Box display="flex" justifyContent="start">
             <Box mx={1} className="cursor">
               <Typography variant="h6" color="inherit">
-                Sobre
+                Home
               </Typography>
             </Box>
 
             <Box mx={1} className="cursor">
               <Typography variant="h6" color="inherit">
-                Produtos
+                Sobre Nós
               </Typography>
             </Box>
 
-            <Link to='/login' className='text-decorator-none'>
-              <Box mx={1} className="cursor" style={{ color: 'white' }}>
+            <Box mx={1} className="cursor">
+              <Typography variant="h6" color="inherit">
+                Catálogo
+              </Typography>
+            </Box>
+
+            <Link to="/login" className="text-decorator-none">
+              <Box mx={1} className="cursor" style={{ color: "white" }}>
                 <Typography variant="h6" color="inherit">
                   Login
                 </Typography>
               </Box>
             </Link>
+          </Box>
+
+          <Box >
+            <img src={FotoFazendeiro} alt="Foto Fazendeiro" className="farm-img" />
           </Box>
         </Toolbar>
       </AppBar>

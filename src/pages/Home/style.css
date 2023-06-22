@@ -10,6 +10,14 @@
     color: #2F3912;
 }
 
+.box-img{
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    width: 70%;
+    height: 50%;
+}
+
 .item-img {
     align-items: center;
 }
