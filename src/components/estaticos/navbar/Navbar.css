@@ -10,5 +10,10 @@
 .img-home {
     height: 10vh;
     width: 50vh;
-
 }
+
+.farm-img,.imgNav{
+    display: flex;
+    justify-content: end;
+}
+

@@ -17,9 +17,11 @@ export default function Home() {
                     </Box>
                 </Grid >
 
-                <Grid item sm={6} >
+                <Grid item sm={6} justifyContent={`center`}>
                     <Box>
-                        <img src={FruitShop} alt="Mulher no lado esquedo de uma barraca que contem uma balança e legumes colhidos" className="img-container" />
+                        <Box className="box-img">
+                            <img src={FruitShop} alt="Mulher no lado esquedo de uma barraca que contem uma balança e legumes colhidos" className="img-container" />
+                        </Box>
                     </Box>
                 </Grid>
             </Grid>
