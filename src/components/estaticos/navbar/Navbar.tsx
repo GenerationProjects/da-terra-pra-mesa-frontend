@@ -7,45 +7,34 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <>
-      <AppBar position="static" style={{ backgroundColor: "#d5e4ad" }}>
-        <Toolbar variant="dense">
-
-          <Box className="imgNav">
-            <img src={FotoLogo} alt="Foto Logo" className="img-home" />
-          </Box>
-
-          <Box display="flex" justifyContent="start">
-            <Box mx={1} className="cursor">
-              <Typography variant="h6" color="inherit">
-                Home
-              </Typography>
+      <AppBar position="static" className="header">
+        <Box className="imgNav">
+          <img src={FotoLogo} alt="Foto Logo" className="img-home" />
+        </Box>
+        <Toolbar className="p-30">
+          <Box display="flex">
+            <Box mx={1} className="p-1">
+              <Typography className="cursor">HOME</Typography>
             </Box>
 
-            <Box mx={1} className="cursor">
-              <Typography variant="h6" color="inherit">
-                Sobre Nós
-              </Typography>
+            <Box mx={1} className="p-1">
+              <Typography className="cursor">SOBRE NÓS</Typography>
             </Box>
 
-            <Box mx={1} className="cursor">
-              <Typography variant="h6" color="inherit">
-                Catálogo
+            <Box mx={1} className="p-1">
+              <Typography className="cursor">
+                CATÁLOGO
               </Typography>
             </Box>
-
-            <Link to="/login" className="text-decorator-none">
-              <Box mx={1} className="cursor" style={{ color: "white" }}>
-                <Typography variant="h6" color="inherit">
-                  Login
-                </Typography>
-              </Box>
-            </Link>
-          </Box>
-
-          <Box >
-            <img src={FotoFazendeiro} alt="Foto Fazendeiro" className="farm-img" />
           </Box>
         </Toolbar>
+        <Box display="flex" justifyContent="end">
+          <img
+            src={FotoFazendeiro}
+            alt="Foto Fazendeiro"
+            className="farm-img"
+          />
+        </Box>
       </AppBar>
     </>
   );

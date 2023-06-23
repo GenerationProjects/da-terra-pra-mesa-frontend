@@ -1,7 +1,33 @@
-.cursor {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
 
+:root {
+    font-size: 62.5%;
+    --open-sans: 'Open Sans', sans-serif
+}
+
+.header {
+    display: flex !important;
+    flex-direction: row !important;
+    background-color: #d5e4ad !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-shadow: none !important;
+}
+
+.p-1 {
+    padding: 0 1rem;
+}
+
+.cursor {
     cursor: pointer;
-    background-color: #d5e1ad
+    color: #2F3912;
+    font-family: var(--open-sans);
+    font-size: 1.5rem !important;
+}
+
+.cursor:hover {
+    font-weight: 700;
 }
 
 .text-decorator-none {
@@ -9,12 +35,11 @@
 }
 
 .img-home {
-    height: 10vh;
-    width: 50vh;
+    height: 4.5rem;
+    width: 4.5rem;
 }
 
-.farm-img,.imgNav{
+.farm-img{
     display: flex;
-    justify-content: end;
+    justify-content: right;
 }
-
