@@ -1,3 +1,4 @@
+
 .box-container {
     margin: 2rem;
     height: 500px;
@@ -60,14 +61,15 @@
     text-align: center;
 }
 
-.img-venda {
+.box-img {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    border: 4px solid #000;
 }
 
-.img-config {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    height: auto;
+.img-container {
+    align-items: center;
+    justify-content: center;
+    width: 37rem;
+    height: 20rem;
 }
