@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@material-ui/core";
 import Arrow from '../../assets/img/Seta.svg'
 import FruitShop from '../../assets/img/home-img.svg'
 import './home.css'
+import { Link } from "react-router-dom";
 
 export default function Home() {
     return (
@@ -14,12 +15,14 @@ export default function Home() {
                             Conectando você a agricultores sustentáveis e produtos de qualidade, para uma vida melhor e transformando pequenos agricultores em amigos da vizinhança!
                         </p>
                     </Box>
-                    <Box className="btn-catalog">
-                        INICIE AGORA A SUA BUSCA
-                        <Box className="btn-arrow">
-                            <img src={Arrow} alt="" />
+                    <Link to={`/catalogo`}>
+                        <Box className="btn-catalog">
+                            INICIE AGORA A SUA BUSCA
+                            <Box className="btn-arrow">
+                                <img src={Arrow} alt="" className="arrow-img" />
+                            </Box>
                         </Box>
-                    </Box>
+                    </Link>
                 </Grid>
 
                 <Grid item xs={6} className="grid-item-2">

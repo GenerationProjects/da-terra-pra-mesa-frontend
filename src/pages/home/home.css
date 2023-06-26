@@ -25,12 +25,18 @@
     height: 50px;
     padding-left: 20px;
     border-radius: 10px;
-    margin: 110px 0px 0px 20px;
+    margin: 125px 0px 0px 20px;
     display: flex;
+    font-weight: bolder;
     align-items: center;
     justify-content: center;
     color: #F6F8E8;
     background-color: #65743C;
+}
+
+.btn-catalog:hover {
+    cursor: pointer;
+    background-color: #2F3912;
 }
 
 .btn-arrow {
@@ -43,6 +49,10 @@
     flex-direction: row;
     justify-content: center;
     background-color: #2F3912;
+}
+
+.btn-arrow:houve {
+    background-color: #65743C;
 }
 
 .texts {
