@@ -2,9 +2,9 @@ import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import { Link, useNavigate } from 'react-router-dom'
 import { ChangeEvent, useEffect, useState } from 'react';
 import { cadastroUsuario } from '../../services/service';
-import ImgCadas from '../../assets/img/Sign_up-amico_.svg'
+import ImgCadas from '../../assets/img/cadastro.svg'
 import Usuario from '../../models/Usuario';
-import './style.css'
+import './cadastro.css'
 
 
 export default function Cadastro() {

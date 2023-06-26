@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    
+    background-color: #D5E4AD;
+    border-radius: 10px;
+    align-items: center;
+    padding: 2rem;
+    margin: 2rem;
+    border: 4px solid #000;
+}
+
+.filho{
+    flex-direction: row;
+    align-items: center;
+    border: 4px solid #000;
+}
+
+.texts {
+    color: #2F3912;
+    text-align: center;
+}
+
+.box-img {
+    display: flex;
+    justify-content: center;
+    border: 4px solid #000;
+}
+
+.img-container {
+    align-items: center;
+    justify-content: center;
+    width: 37rem;
+    height: 20rem;
+}

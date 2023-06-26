@@ -2,10 +2,10 @@ import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import { ChangeEvent, useEffect, useState } from "react";
 import { login } from "../../services/service";
-import ImgLogin from "../../assets/img/Privacy_policy.svg";
+import ImgLogin from "../../assets/img/login-img.svg";
 import useLocalStorage from "react-use-localstorage";
 import UsuarioLogin from "../../models/UsuarioLogin";
-import "./style.css";
+import "./login.css";
 
 export default function Login() {
 
@@ -50,16 +50,19 @@ export default function Login() {
     return (
         <>
             <Grid container direction='row' justifyContent='center' alignItems='center' className="">
-                <Grid xs={6} className='imagem'>
-                    <Typography>
-                        <h1>Divulgue seus produtos na nossa plataforma</h1>
-
-                        Faça parte do nosso catálogo de divulgação e aumente a venda dos seus produtos.
-                    </Typography>
-                    <img src={ImgLogin} alt="" />
+                <Grid xs={6} className='grid-imagem'>
+                    <Box className="box-container">
+                        <Box>
+                            <Typography >
+                                <h1>Divulgue seus produtos na nossa plataforma</h1>
+                                Faça parte do nosso catálogo de divulgação e aumente a venda dos seus produtos.
+                            </Typography>
+                        </Box>
+                        <img src={ImgLogin} alt="" />
+                    </Box>
                 </Grid>
                 <Grid alignItems='center' xs={6}>
-                    <Box paddingX={20} className="boxLogin">
+                    <Box paddingX={20} className="box-login">
                         <Box>
                             <form onSubmit={onSubmit}>
                                 <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' style={{ fontWeight: 'bold' }}>Entrar</Typography>
@@ -77,7 +80,7 @@ export default function Login() {
                                 <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                             </Box>
                             <Link to={`/cadastro`}>
-                            <Typography variant='subtitle1' gutterBottom align='center' style={{ fontWeight: 'bold' }}>Cadastre-se</Typography>
+                                <Typography variant='subtitle1' gutterBottom align='center' style={{ fontWeight: 'bold' }}>Cadastre-se</Typography>
                             </Link>
                         </Box>
                     </Box>
