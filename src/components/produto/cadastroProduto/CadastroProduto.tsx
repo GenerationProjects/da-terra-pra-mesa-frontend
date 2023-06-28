@@ -54,7 +54,7 @@ function CadastroProduto() {
     }, [id])
 
     async function getCategorias() {
-        await busca("/categoria", setCategoria, {
+        await busca("/categorias", setCategoria, {
             headers: {
                 'Authorization': token
             }
@@ -62,7 +62,7 @@ function CadastroProduto() {
     }
 
     async function findByIdProduto(id: string) {
-        await buscaId(`produtos/${id}`, setProduto, {
+        await buscaId(`/produtos/${id}`, setProduto, {
             headers: {
                 'Authorization': token
             }
@@ -116,11 +116,11 @@ function CadastroProduto() {
                 <TextField value={produto.imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="imagem" label="url da imagem" name="imagem" type="url" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label">Categoria</InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/categoria/${e.target.value}`, setCategoria, {
+                        onChange={(e) => buscaId(`/categorias/${e.target.value}`, setCategoria, {
                             headers: {
                                 'Authorization': token
                             }
