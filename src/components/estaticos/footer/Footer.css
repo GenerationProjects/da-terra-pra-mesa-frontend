@@ -1,0 +1,22 @@
+.box1{
+  background-color: #D5E4AD;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.textos{
+  color: #65743C;
+  font-weight: bold !important;
+}
+
+.redes{
+  font-size: 30px !important;
+  color: #65743C;
+  padding: 1px;
+}
+
+.box2{
+  background-color: #D5E4AD;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
