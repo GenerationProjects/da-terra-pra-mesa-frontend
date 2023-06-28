@@ -7,8 +7,11 @@ import './App.css'
 import Navbar from './components/estaticos/navbar/Navbar'
 import Footer from './components/estaticos/footer/Footer'
 import Catalogo from './pages/catalogo/Catalogo'
+import CadastroProduto from './components/produto/cadastroProduto/CadastroProduto'
+import DeletarProduto from './components/produto/deletarProduto/DeletarProduto'
 import ListarCategoria from './components/categoria/listarCategoria/ListarCategoria'
 import ListarProdutos from './components/produto/listarProdutos/ListarProdutos'
+
 
 export default function App() {
   return (
@@ -19,13 +22,24 @@ export default function App() {
           <Routes>
 
             <Route path='/' element={<Home />} />
+
             <Route path='/cadastro' element={<Cadastro />} />
+
             <Route path='/login' element={<Login />} />
+
             <Route path='/sobre' element={<Sobre />} />
+
             <Route path='/catalogo' element={<Catalogo />} />
+
+
+            <Route path="/formularioProduto" element={<CadastroProduto />} />
+
+            <Route path="/formularioProduto/:id" element={<CadastroProduto />} />
+
+            <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+
             <Route path='/categorias' element={<ListarCategoria />} />
             <Route path='/produtos' element={<ListarProdutos />} />
-
 
           </Routes>
         </div>
