@@ -1,0 +1,38 @@
+.box-container {
+  margin: 2rem;
+  height: 500px;
+  border-radius: 10px;
+  border: none !important;
+  flex-direction: row !important;
+  background-color: #D5E4AD;
+}
+
+.title-h4 {
+  padding-bottom: 20px;
+}
+
+.box-title {
+  margin: 100px 0px 0px 25px;
+}
+
+.grid-item-2 {
+  display: flex;
+  justify-content: center;
+}
+
+.texts {
+  color: #2F3912;
+  text-align: center;
+}
+
+.img-venda {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-config {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
