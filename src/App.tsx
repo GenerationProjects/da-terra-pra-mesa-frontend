@@ -9,6 +9,7 @@ import Footer from './components/estaticos/footer/Footer'
 import Catalogo from './pages/catalogo/Catalogo'
 import ListarCategoria from './components/categoria/listarCategoria/ListarCategoria'
 import ListarProdutos from './components/produto/listarProdutos/ListarProdutos'
+import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria'
 
 export default function App() {
   return (
@@ -17,16 +18,14 @@ export default function App() {
         <Navbar />
         <div>
           <Routes>
-
-            <Route path='/' element={<Home />} />
-            <Route path='/cadastro' element={<Cadastro />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/sobre' element={<Sobre />} />
-            <Route path='/catalogo' element={<Catalogo />} />
-            <Route path='/categorias' element={<ListarCategoria />} />
-            <Route path='/produtos' element={<ListarProdutos />} />
-
-
+            <Route path="/" element={<Home />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/catalogo" element={<Catalogo />} />
+            <Route path="/categorias" element={<ListarCategoria />} />
+            <Route path="/produtos" element={<ListarProdutos />} />
+            <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
           </Routes>
         </div>
         <Footer />

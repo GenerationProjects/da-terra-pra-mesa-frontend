@@ -1,9 +1,8 @@
 import React from 'react'
 import './Footer.css'
 import { Box, Grid, Typography } from '@material-ui/core'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import InstagramIcon from '@material-ui/icons/Instagram'
-import FacebookIcon from '@material-ui/icons/Facebook'
+import GitHubIcon from '@material-ui/icons/GitHub'
+
 
 function Footer() {
   return (
@@ -23,14 +22,8 @@ function Footer() {
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center">
-              <a href="https://www.linkedin.com/">
-                <LinkedInIcon className="redes" />
-              </a>
-              <a href="https://www.instagram.com/">
-                <InstagramIcon className="redes" />
-              </a>
-              <a href="https://www.facebook.com/">
-                <FacebookIcon className="redes" />
+              <a href="https://https://github.com/GenerationProjects/da-terra-pra-mesa-frontend">
+                <GitHubIcon className="redes" />
               </a>
             </Box>
             <Box className='box2'>
