@@ -42,8 +42,8 @@ export default function ListarProdutos() {
                             <Typography color="textSecondary" gutterBottom>
                                 Produto
                             </Typography>
-                            <Typography variant="h5" component="h2">
-                                <img src={produto.imagem} alt="" />
+                            <Typography variant="h5" component="h2" >
+                                <img src={produto.imagem} alt="" className='.img-produto'/>
                             </Typography>
                             <Typography variant="body2" component="p">
                                 {produto.nome}
