@@ -6,16 +6,26 @@ import {useNavigate, useParams } from 'react-router-dom'
 import useLocalStorage from 'react-use-localstorage';
 import Produto from '../../../models/Produto';
 import { buscaId, deleteId } from '../../../services/service';
+import { toast } from 'react-toastify';
 
 function DeletarProduto() {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const [token, setToken] = useLocalStorage('token');
     const [produto, setProduto] = useState<Produto>()
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.warn('Você precisa estar logado!', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              progress: undefined,
+              theme: "light",
+              });
             navigate("/login")
     
         }
@@ -42,7 +52,16 @@ function DeletarProduto() {
                 'Authorization': token
               }
             });
-            alert('Produto deletado com sucesso');
+            toast.success('Produto deletado com sucesso!', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              progress: undefined,
+              theme: "light",
+              });
           }
         
           function nao() {
