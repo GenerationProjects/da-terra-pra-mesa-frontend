@@ -15,7 +15,7 @@ export default function Home() {
                             Conectando você a agricultores sustentáveis e produtos de qualidade, para uma vida melhor e transformando pequenos agricultores em amigos da vizinhança!
                         </p>
                     </Box>
-                    <Link to={`/catalogo`}>
+                    <Link to={`/catalogo`} className="text-decorator-none">
                         <Box className="btn-catalog">
                             INICIE AGORA A SUA BUSCA
                             <Box className="btn-arrow">

@@ -5,6 +5,7 @@ import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem,
 import Produto from '../../../models/Produto';
 import Categoria from '../../../models/Categoria';
 import useLocalStorage from 'react-use-localstorage';
+import { toast } from 'react-toastify';
 import './CadastroProduto.css';
 
 export default function CadastroProduto() {
@@ -17,7 +18,16 @@ export default function CadastroProduto() {
     useEffect(() => {
         if (token == "") {
 
-            alert("Você precisa estar logado")
+            toast.warn('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
             navigate("/login")
 
         }
@@ -92,7 +102,16 @@ export default function CadastroProduto() {
                 }
             })
 
-            alert('Produto atualizado com sucesso');
+            toast.success('Produto atualizado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
 
         } else {
 
@@ -101,7 +120,16 @@ export default function CadastroProduto() {
                     'Authorization': token
                 }
             })
-            alert('Produto cadastrado com sucesso');
+            toast.success('Produto cadastrado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
 
         }
         back()
