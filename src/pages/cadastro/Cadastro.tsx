@@ -53,9 +53,14 @@ export default function Cadastro() {
         if (confirmarSenha == usuario.senha) {
             cadastroUsuario(`/usuarios/cadastrar`, usuario, setUserResult)
             alert('Usuario cadastrado com sucesso')
+            navigate('/login')
         } else {
             alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
         }
+    }
+
+    function goLogin() {
+        navigate('/login')
     }
 
     return (
@@ -67,7 +72,7 @@ export default function Cadastro() {
                         <Typography
                             variant="h3"
                             gutterBottom
-                            
+
                             component="h3"
                             align="center"
                             className="textos2"

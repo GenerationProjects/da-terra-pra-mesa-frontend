@@ -33,7 +33,7 @@ export default function App() {
             <Route path="/cadastrarProduto" element={<CadastroProduto />} />
             <Route path="/cadastrarProduto/:id" element={<CadastroProduto />} />
             <Route path='/cadastrarCategoria' element={<CadastrarCategoria />} />
-            <Route path='/cadastrarCategoria:id' element={<CadastrarCategoria />} />
+            <Route path='/cadastrarCategoria/:id' element={<CadastrarCategoria />} />
             <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
             <Route path='/categorias' element={<ListarCategoria />} />
             <Route path='/produtos' element={<ListarProdutos />} />
