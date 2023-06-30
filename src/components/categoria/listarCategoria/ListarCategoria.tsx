@@ -1,9 +1,10 @@
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { busca } from '../../../services/service';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
 import './ListarCategoria.css';
@@ -13,8 +14,11 @@ export default function ListarCategoria() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
+
     const [categorias, setCategoria] = useState<Categoria[]>([]);
-    const [token, setToken] = useState('');
 
     useEffect(() => {
         if (token == '') {

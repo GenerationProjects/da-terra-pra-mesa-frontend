@@ -1,8 +1,9 @@
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { busca, buscaId, post, put } from '../../../services/service';
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core";
 import Produto from '../../../models/Produto';
@@ -15,7 +16,10 @@ export default function CadastroProduto() {
     const dispatch = useDispatch()
     const { id } = useParams<{ id: string }>()
     const [categorias, setCategorias] = useState<Categoria[]>([])
-    const [token, setToken] = useState('')
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {
@@ -29,7 +33,7 @@ export default function CadastroProduto() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
             navigate("/login")
             dispatch(addToken(token));
 
@@ -114,7 +118,7 @@ export default function CadastroProduto() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         } else {
 
@@ -132,7 +136,7 @@ export default function CadastroProduto() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         }
         back()

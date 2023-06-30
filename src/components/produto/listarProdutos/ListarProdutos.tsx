@@ -1,9 +1,10 @@
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { busca } from '../../../services/service';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Produto from '../../../models/Produto';
 import './listarProdutos.css';
@@ -13,9 +14,11 @@ export default function ListarProdutos() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     
-    const [produtos, setProduto] = useState<Produto[]>([])
-    const [token, setToken] = useState('')
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
+    const [produtos, setProduto] = useState<Produto[]>([])
 
     useEffect(() => {
         if (token == '') {
@@ -28,7 +31,7 @@ export default function ListarProdutos() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
             navigate('/login')
             dispatch(addToken(token));
         }
@@ -57,7 +60,7 @@ export default function ListarProdutos() {
                                 Produto
                             </Typography>
                             <Typography variant="h5" component="h2" >
-                                <img src={produto.imagem} alt="" className='.img-produto'/>
+                                <img src={produto.imagem} alt="" className='.img-produto' />
                             </Typography>
                             <Typography variant="body2" component="p">
                                 {produto.nome}
