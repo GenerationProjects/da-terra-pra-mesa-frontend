@@ -5,6 +5,7 @@ import FruitShop from '../../assets/img/home-img.svg'
 import './home.css'
 
 export default function Home() {
+    
     return (
         <>
             <Grid xs={12} className="box-container" >

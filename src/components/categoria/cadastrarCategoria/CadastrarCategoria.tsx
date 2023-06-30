@@ -3,17 +3,19 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, post, put } from '../../../services/service';
 import { Button, Container, TextField, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
-import useLocalStorage from 'react-use-localstorage';
 import { toast } from 'react-toastify';
 import './cadastroCategoria.css'
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../../store/tokens/action';
 
 export default function CadastrarCategoria() {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch()
 
 
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage('token');
+    const [token, setToken] = useState('');
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
         tipo: '',
@@ -32,6 +34,7 @@ export default function CadastrarCategoria() {
                 progress: undefined,
                 theme: "light",
                 });
+            dispatch(addToken(token))  
             navigate('/login')
         }
     }, [token])

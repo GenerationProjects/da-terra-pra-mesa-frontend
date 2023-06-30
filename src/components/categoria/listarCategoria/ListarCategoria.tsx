@@ -6,12 +6,16 @@ import Categoria from '../../../models/Categoria';
 import useLocalStorage from 'react-use-localstorage';
 import { toast } from 'react-toastify';
 import './listarCategoria.css';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../../store/tokens/action';
 
 export default function ListarCategoria() {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
     const [categorias, setCategoria] = useState<Categoria[]>([]);
-    const [token, setToken] = useLocalStorage('token');
+    const [token, setToken] = useState('');
 
     useEffect(() => {
         if (token == '') {
@@ -25,6 +29,7 @@ export default function ListarCategoria() {
                 progress: undefined,
                 theme: "light",
                 });
+            dispatch(addToken(token))
             navigate("/login")
         }
     }, [token])

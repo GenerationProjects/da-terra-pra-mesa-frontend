@@ -3,15 +3,17 @@ import { busca } from '../../../services/service';
 import { Link, useNavigate } from 'react-router-dom'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Produto from '../../../models/Produto';
-import useLocalStorage from 'react-use-localstorage';
 import { toast } from 'react-toastify';
 import './listarProdutos.css';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../../store/tokens/action';
 
 export default function ListarProdutos() {
 
-    const navigate = useNavigate();
-    const [produtos, setProduto] = useState<Produto[]>([]);
-    const [token] = useLocalStorage('token');
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const [produtos, setProduto] = useState<Produto[]>([])
+    const [token, setToken] = useState('')
 
 
     useEffect(() => {
@@ -27,6 +29,7 @@ export default function ListarProdutos() {
                 theme: "light",
                 });
             navigate('/login')
+            dispatch(addToken(token));
         }
     }, [token])
 

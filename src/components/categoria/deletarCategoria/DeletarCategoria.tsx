@@ -1,17 +1,20 @@
 import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import Categoria from "../../../models/Categoria";
 import { buscaId, deleteId } from "../../../services/service";
 import { toast } from 'react-toastify';
 import './DeletarCategoria.css'
+import { useDispatch } from "react-redux";
+import { addToken } from "../../../store/tokens/action";
 
 export default function DeletarCategoria() {
   const [categoria, setCategoria] = useState<Categoria>()
-  const [token, setToken] = useLocalStorage('token')
+  const [token, setToken] = useState('')
   const {id} = useParams<{id: string}>()
+  const dispatch = useDispatch()
   let navigate = useNavigate()
+
     
   useEffect(() => {
     if (token == '') {
@@ -25,6 +28,7 @@ export default function DeletarCategoria() {
         progress: undefined,
         theme: "light",
         });
+      dispatch(addToken(token))
       navigate ('/login')
     }
   },[token])
