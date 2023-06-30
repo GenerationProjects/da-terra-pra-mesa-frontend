@@ -3,15 +3,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { ChangeEvent, useEffect, useState } from "react";
 import { login } from "../../services/service";
 import ImgLogin from "../../assets/img/login-img.svg";
-import useLocalStorage from "react-use-localstorage";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import { toast } from 'react-toastify'
 import "./login.css";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/action";
 
 export default function Login() {
 
-    const navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const navigate = useNavigate()
+    const dispatch = useDispatch() 
+
+    const [token, setToken] = useState('')
     const [usuarioLogin, setUserLogin] = useState<UsuarioLogin>(
         {
             id: 0,
@@ -31,7 +34,8 @@ export default function Login() {
 
     useEffect(() => {
         if (token != '') {
-            navigate('/')
+            dispatch(addToken(token))
+            navigate('/home')
         }
     }, [token])
 

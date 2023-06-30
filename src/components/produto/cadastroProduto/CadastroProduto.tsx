@@ -4,16 +4,18 @@ import { busca, buscaId, post, put } from '../../../services/service';
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import Produto from '../../../models/Produto';
 import Categoria from '../../../models/Categoria';
-import useLocalStorage from 'react-use-localstorage';
 import { toast } from 'react-toastify';
 import './CadastroProduto.css';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../../store/tokens/action';
 
 export default function CadastroProduto() {
 
-    const navigate = useNavigate();
-    const { id } = useParams<{ id: string }>();
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const { id } = useParams<{ id: string }>()
     const [categorias, setCategorias] = useState<Categoria[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const [token, setToken] = useState('')
 
     useEffect(() => {
         if (token == "") {
@@ -29,6 +31,7 @@ export default function CadastroProduto() {
                 theme: "light",
                 });
             navigate("/login")
+            dispatch(addToken(token));
 
         }
     }, [token])
