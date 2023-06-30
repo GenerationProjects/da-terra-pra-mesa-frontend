@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import store from './store/store'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
@@ -48,6 +48,8 @@ export default function App() {
 
 
             <Route path='/carrinho' element={<Carrinho />} />
+
+            <Route path={`*`} element={<Navigate to={`/`} />} />
 
           </Routes>
         </div>
