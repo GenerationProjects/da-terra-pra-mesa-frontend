@@ -1,13 +1,13 @@
-import { useNavigate, useParams } from 'react-router-dom'
-import { ChangeEvent, useEffect, useState } from 'react'
-import { busca, buscaId, post, put } from '../../../services/service';
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
-import Produto from '../../../models/Produto';
-import Categoria from '../../../models/Categoria';
 import { toast } from 'react-toastify';
-import './CadastroProduto.css';
 import { useDispatch } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
+import { ChangeEvent, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { busca, buscaId, post, put } from '../../../services/service';
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core";
+import Produto from '../../../models/Produto';
+import Categoria from '../../../models/Categoria';
+import './CadastroProduto.css';
 
 export default function CadastroProduto() {
 

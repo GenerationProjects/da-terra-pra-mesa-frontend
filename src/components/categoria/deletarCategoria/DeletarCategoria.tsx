@@ -1,24 +1,26 @@
-import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import Categoria from "../../../models/Categoria";
-import { buscaId, deleteId } from "../../../services/service";
 import { toast } from 'react-toastify';
-import './DeletarCategoria.css'
 import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 import { addToken } from "../../../store/tokens/action";
+import { useNavigate, useParams } from "react-router-dom";
+import { buscaId, deleteId } from "../../../services/service";
+import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
+import Categoria from "../../../models/Categoria";
+import './DeletarCategoria.css'
 
 export default function DeletarCategoria() {
+  
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  
   const [categoria, setCategoria] = useState<Categoria>()
   const [token, setToken] = useState('')
   const {id} = useParams<{id: string}>()
-  const dispatch = useDispatch()
-  let navigate = useNavigate()
 
     
   useEffect(() => {
     if (token == '') {
-      toast.warn('🦄 Necessário estar logado!', {
+      toast.warn('Necessário estar logado!', {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: true,

@@ -1,4 +1,4 @@
-import './carrinho.css';
+import './Carrinho.css';
 
 export default function Carrinho() {
     

@@ -1,12 +1,12 @@
-import { Box, Button, Grid, TextField } from '@material-ui/core';
-import { Link, useNavigate } from 'react-router-dom';
-import { Typography } from '@mui/material';
-import { ChangeEvent, useEffect, useState } from 'react';
-import { cadastroUsuario } from '../../services/service';
 import { toast } from 'react-toastify';
-import ImgCadas from '../../assets/img/cadastro.svg';
+import { Typography } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
+import { cadastroUsuario } from '../../services/service';
+import { Box, Button, Grid, TextField } from '@material-ui/core';
+import { ChangeEvent, useEffect, useState } from 'react';
 import Usuario from '../../models/Usuario';
-import './cadastro.css';
+import ImgCadas from '../../assets/img/cadastro.svg';
+import './Cadastro.css';
 
 
 export default function Cadastro() {

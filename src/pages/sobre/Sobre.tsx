@@ -1,19 +1,19 @@
 import { Box, Grid, Typography } from "@material-ui/core";
 import Agricultores from "../../assets/img/Agricultores.jpg";
+import "./Sobre.css";
 
-import "./sobre.css";
 
 export default function Sobre() {
   return (
     <>
       <Grid xs={12} className="box-container-sobre">
 
-        <Grid item xs={12} md={8}>   
+        <Grid item xs={12} md={8}>
           <Box className="box-about">
             <Typography variant="h4" className="title-sobre">
               Olá, nós somos 'Da Terra Pra Mesa'!
             </Typography>
-            
+
             <Typography variant="subtitle1" className='subtitle'>
               Somos uma plataforma e-commerce inspirada nos Objetivos de
               Desenvolvimento Sustentável nº 2 das Nações Unidas - Fome Zero e
@@ -41,11 +41,11 @@ export default function Sobre() {
         </Grid>
 
         <Grid item xs={6}>
-            <img
-              src={Agricultores}
-              alt="Foto com família de agricultores"
-              className="img-venda"
-            />
+          <img
+            src={Agricultores}
+            alt="Foto com família de agricultores"
+            className="img-venda"
+          />
         </Grid>
 
       </Grid>
