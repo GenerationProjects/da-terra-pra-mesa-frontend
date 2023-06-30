@@ -10,7 +10,7 @@ import { addToken } from '../../../store/tokens/action';
 
 export default function CadastrarCategoria() {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const dispatch = useDispatch()
 
 
