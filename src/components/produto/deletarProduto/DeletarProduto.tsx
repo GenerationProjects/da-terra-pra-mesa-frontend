@@ -3,15 +3,17 @@ import {Typography, Button, Card, CardActions, CardContent } from "@material-ui/
 import {Box} from '@mui/material';
 import './DeletarProduto.css';
 import {useNavigate, useParams } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage';
 import Produto from '../../../models/Produto';
 import { buscaId, deleteId } from '../../../services/service';
 import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../../store/tokens/action';
 
 function DeletarProduto() {
-    const navigate = useNavigate();
-    const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token');
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const { id } = useParams<{id: string}>()
+    const [token, setToken] = useState('')
     const [produto, setProduto] = useState<Produto>()
 
     useEffect(() => {
@@ -27,6 +29,7 @@ function DeletarProduto() {
               theme: "light",
               });
             navigate("/login")
+            dispatch(addToken(token));
     
         }
     }, [token])

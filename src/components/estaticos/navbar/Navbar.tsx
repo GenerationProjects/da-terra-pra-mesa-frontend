@@ -1,43 +1,47 @@
-import { AppBar, Box, Toolbar, Typography } from "@material-ui/core";
-import { Link, useNavigate } from "react-router-dom";
-import FotoFazendeiro from "../../../assets/img/farmer.svg";
-import FotoLogo from "../../../assets/img/logo.svg";
-import { useState } from "react";
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import "./Navbar.css";
-import useLocalStorage from "react-use-localstorage";
-import { toast } from 'react-toastify';
+import { AppBar, Box, Toolbar, Typography } from '@material-ui/core'
+import { Link, useNavigate } from 'react-router-dom'
+import FotoFazendeiro from '../../../assets/img/farmer.svg'
+import FotoLogo from '../../../assets/img/logo.svg'
+import { useState } from 'react'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import IconButton from '@mui/material/IconButton'
+import './Navbar.css'
+import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { addToken } from '../../../store/tokens/action'
 
 function Navbar() {
-  const [token, setToken] = useLocalStorage('token');
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const [token, setToken] = useState('')
 
   const goLogout = () => {
-    setToken('');
+    setToken('')
     toast.success('Usuário deslogado!', {
-      position: "top-right",
+      position: 'top-right',
       autoClose: 2000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
       progress: undefined,
-      theme: "light",
-    });
-    navigate('/login');
+      theme: 'light'
+    })    
+    dispatch(addToken(token))
+    navigate('/login')
   }
 
-  const [isActive, setIsActive] = useState(null);
+  const [isActive, setIsActive] = useState(null)
 
-  const menuOpen = (event) => {
-    setIsActive(event.currentTarget);
-  };
+  const menuOpen = event => {
+    setIsActive(event.currentTarget)
+  }
 
   const menuClose = () => {
-    setIsActive(null);
-  };
+    setIsActive(null)
+  }
 
   return (
     <>
@@ -56,9 +60,7 @@ function Navbar() {
 
             <Link to={`/catalogo`} className="text-decorator-none">
               <Box mx={1} className="p-1">
-                <Typography className="cursor">
-                  CATÁLOGO
-                </Typography>
+                <Typography className="cursor">CATÁLOGO</Typography>
               </Box>
             </Link>
             {token !== "" ? (
@@ -90,9 +92,18 @@ function Navbar() {
           </Box>
         </Toolbar>
         <Box display="flex" justifyContent="end">
-          <IconButton aria-controls="dropdown-menu" aria-haspopup="true" onClick={menuOpen}>
-            <img src={FotoFazendeiro} alt="Foto Fazendeiro" className="farm-img" />
+          <IconButton
+            aria-controls="dropdown-menu"
+            aria-haspopup="true"
+            onClick={menuOpen}
+          >
+            <img
+              src={FotoFazendeiro}
+              alt="Foto Fazendeiro"
+              className="farm-img"
+            />
           </IconButton>
+
           <Menu id="dropdown-menu" anchorEl={isActive} open={Boolean(isActive)} onClose={menuClose}>
 
             {
@@ -112,11 +123,10 @@ function Navbar() {
             }
 
           </Menu>
-
         </Box>
       </AppBar >
     </>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

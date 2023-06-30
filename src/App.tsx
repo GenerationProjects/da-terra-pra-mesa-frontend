@@ -16,12 +16,15 @@ import CadastrarCategoria from './components/categoria/cadastrarCategoria/Cadast
 import Carrinho from './pages/carrinho/Carrinho'
 import './App.css'
 import 'react-toastify/dist/ReactToastify.css'
+import { Provider } from 'react-redux'
+import store from './store/store'
 
 
 
 export default function App() {
   return (
     <>
+    <Provider store={store}>
       <BrowserRouter>
         <ToastContainer />
         <Navbar />
@@ -54,6 +57,7 @@ export default function App() {
         </div>
         <Footer />
       </BrowserRouter>
+      </Provider>
     </>
   )
 }
