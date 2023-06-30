@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { buscaSimples } from '../../services/service';
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, makeStyles } from '@material-ui/core'
 import Produto from '../../models/Produto';
-import './catalogo.css'
+import './Catalogo.css'
 
 const useStyles = makeStyles({
     root: {

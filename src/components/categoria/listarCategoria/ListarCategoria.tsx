@@ -1,13 +1,12 @@
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { busca } from '../../../services/service';
 import { Link, useNavigate } from 'react-router-dom';
+import { addToken } from '../../../store/tokens/action';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
-import useLocalStorage from 'react-use-localstorage';
-import { toast } from 'react-toastify';
-import './listarCategoria.css';
-import { useDispatch } from 'react-redux';
-import { addToken } from '../../../store/tokens/action';
+import './ListarCategoria.css';
 
 export default function ListarCategoria() {
 

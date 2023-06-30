@@ -1,17 +1,18 @@
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { busca } from '../../../services/service';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
+import { addToken } from '../../../store/tokens/action';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Produto from '../../../models/Produto';
-import { toast } from 'react-toastify';
 import './listarProdutos.css';
-import { useDispatch } from 'react-redux';
-import { addToken } from '../../../store/tokens/action';
 
 export default function ListarProdutos() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    
     const [produtos, setProduto] = useState<Produto[]>([])
     const [token, setToken] = useState('')
 
