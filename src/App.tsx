@@ -1,4 +1,3 @@
-
 import { Provider } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
@@ -30,6 +29,7 @@ export default function App() {
           <div>
             <Routes>
 
+
               {/*Rotas comuns */}
               <Route path='/' element={<Home />} />
               <Route path='/cadastro' element={<Cadastro />} />
@@ -50,6 +50,7 @@ export default function App() {
               <Route path='/cadastrarCategoria' element={<CadastrarCategoria />} />
               <Route path='/cadastrarCategoria/:id' element={<CadastrarCategoria />} />
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+
 
               {/*Rota para carrinho de compra */}
               <Route path='/carrinho' element={<Carrinho />} />

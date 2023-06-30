@@ -19,8 +19,8 @@ export default function DeletarCategoria() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
+  
   const { id } = useParams<{ id: string }>()
-
 
   useEffect(() => {
     if (token == '') {
@@ -33,9 +33,9 @@ export default function DeletarCategoria() {
         draggable: false,
         progress: undefined,
         theme: "light",
-      });
+        });
       dispatch(addToken(token))
-      navigate('/login')
+      navigate ('/login')
     }
   }, [token])
 

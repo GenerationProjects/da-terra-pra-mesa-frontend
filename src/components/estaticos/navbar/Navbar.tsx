@@ -26,7 +26,7 @@ export default function Navbar() {
 
     dispatch(addToken(''))
     navigate('/login')
-    
+
 
     toast.success('Usuário deslogado!', {
       position: 'top-right',
@@ -110,6 +110,7 @@ export default function Navbar() {
               className="farm-img"
             />
           </IconButton>
+
           <Menu id="dropdown-menu" anchorEl={isActive} open={Boolean(isActive)} onClose={menuClose}>
 
             {
