@@ -4,7 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Produto from '../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
-import './listarProdutos.css'
+import { toast } from 'react-toastify';
+import './listarProdutos.css';
 
 export default function ListarProdutos() {
 
@@ -15,7 +16,16 @@ export default function ListarProdutos() {
 
     useEffect(() => {
         if (token == '') {
-            alert("Você precisa estar logado!!")
+            toast.warn('Você precisa estar logado!!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
             navigate('/login')
         }
     }, [token])
@@ -59,7 +69,7 @@ export default function ListarProdutos() {
                         <CardActions>
                             <Box display="flex" justifyContent="center" mb={1.5}>
 
-                                <Link to={`/cadastroProduto/${produto.id}`} className="text-decorator-none" >
+                                <Link to={`/cadastrarProduto/${produto.id}`} className="text-decorator-none" >
                                     <Box mx={1}>
                                         <Button variant="contained" className="marginLeft" size='small' color="primary" >
                                             atualizar

@@ -1,11 +1,12 @@
-import { Box, Button, Grid, TextField } from '@material-ui/core'
-import { Link, useNavigate } from 'react-router-dom'
+import { Box, Button, Grid, TextField } from '@material-ui/core';
+import { Link, useNavigate } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { cadastroUsuario } from '../../services/service';
-import ImgCadas from '../../assets/img/cadastro.svg'
+import { toast } from 'react-toastify';
+import ImgCadas from '../../assets/img/cadastro.svg';
 import Usuario from '../../models/Usuario';
-import './cadastro.css'
+import './cadastro.css';
 
 
 export default function Cadastro() {
@@ -54,13 +55,30 @@ export default function Cadastro() {
             cadastroUsuario(`/usuarios/cadastrar`, usuario, setUserResult)
             alert('Usuario cadastrado com sucesso')
             navigate('/login')
-        } else {
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
-        }
-    }
 
-    function goLogin() {
-        navigate('/login')
+            toast.success('Usuario cadastrado com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
+
+        } else {
+            toast.warn('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
+        }
     }
 
     return (

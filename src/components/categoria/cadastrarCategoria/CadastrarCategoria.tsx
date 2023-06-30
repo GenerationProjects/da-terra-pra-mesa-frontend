@@ -4,6 +4,7 @@ import { buscaId, post, put } from '../../../services/service';
 import { Button, Container, TextField, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
 import useLocalStorage from 'react-use-localstorage';
+import { toast } from 'react-toastify';
 import './cadastroCategoria.css'
 
 export default function CadastrarCategoria() {
@@ -21,7 +22,16 @@ export default function CadastrarCategoria() {
 
     useEffect(() => {
         if (token == '') {
-            alert('Você precisa estar logado')
+            toast.warn('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
             navigate('/login')
         }
     }, [token])
@@ -61,7 +71,16 @@ export default function CadastrarCategoria() {
                     'Authorization': token
                 }
             })
-            alert('Tema atualizado com sucesso');
+            toast.success('Categoria atualizada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
 
         } else {
 
@@ -70,7 +89,17 @@ export default function CadastrarCategoria() {
                     'Authorization': token
                 }
             })
-            alert('Tema cadastrado com sucesso');
+            toast.success('Categoria cadastrada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
+
         }
         back()
     }

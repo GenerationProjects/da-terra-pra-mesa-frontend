@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
 import useLocalStorage from 'react-use-localstorage';
+import { toast } from 'react-toastify';
 import './listarCategoria.css';
 
 export default function ListarCategoria() {
@@ -14,7 +15,16 @@ export default function ListarCategoria() {
 
     useEffect(() => {
         if (token == '') {
-            alert("Você precisa estar logado")
+            toast.warn('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
             navigate("/login")
         }
     }, [token])
