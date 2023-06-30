@@ -15,7 +15,7 @@ export default function CadastroProduto() {
     const dispatch = useDispatch()
     const { id } = useParams<{ id: string }>()
     const [categorias, setCategorias] = useState<Categoria[]>([])
-    const [token, setToken] = useState('')
+   
 
     useEffect(() => {
         if (token == "") {
