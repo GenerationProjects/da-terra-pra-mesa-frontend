@@ -15,12 +15,15 @@ import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCat
 import CadastrarCategoria from './components/categoria/cadastrarCategoria/CadastrarCategoria'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Provider } from 'react-redux'
+import store from './store/store'
 
 
 
 export default function App() {
   return (
     <>
+    <Provider store={store}>
       <BrowserRouter>
       <ToastContainer />
         <Navbar />
@@ -45,6 +48,7 @@ export default function App() {
         </div>
         <Footer />
       </BrowserRouter>
+      </Provider>
     </>
   )
 }
