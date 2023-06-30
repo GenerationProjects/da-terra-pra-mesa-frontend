@@ -30,26 +30,31 @@ export default function App() {
           <div>
             <Routes>
 
+              {/*Rotas comuns */}
               <Route path='/' element={<Home />} />
               <Route path='/cadastro' element={<Cadastro />} />
               <Route path='/login' element={<Login />} />
               <Route path='/sobre' element={<Sobre />} />
 
+              {/*Rota para catálogo */}
               <Route path='/catalogo' element={<Catalogo />} />
 
+              {/*Rotas para produtos */}
               <Route path='/produtos' element={<ListarProdutos />} />
               <Route path="/cadastrarProduto" element={<CadastroProduto />} />
               <Route path="/cadastrarProduto/:id" element={<CadastroProduto />} />
               <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
 
+              {/*Rotas para categorias */}
               <Route path='/categorias' element={<ListarCategoria />} />
               <Route path='/cadastrarCategoria' element={<CadastrarCategoria />} />
               <Route path='/cadastrarCategoria/:id' element={<CadastrarCategoria />} />
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
 
-
+              {/*Rota para carrinho de compra */}
               <Route path='/carrinho' element={<Carrinho />} />
 
+              {/*Segurança de rotas */}
               <Route path={`*`} element={<Navigate to={`/`} />} />
 
             </Routes>
