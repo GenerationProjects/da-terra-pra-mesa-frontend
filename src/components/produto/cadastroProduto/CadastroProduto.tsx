@@ -1,8 +1,9 @@
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { busca, buscaId, post, put } from '../../../services/service';
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core";
 import Produto from '../../../models/Produto';
@@ -14,8 +15,13 @@ export default function CadastroProduto() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { id } = useParams<{ id: string }>()
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
     const [categorias, setCategorias] = useState<Categoria[]>([])
-   
+
 
     useEffect(() => {
         if (token == "") {
@@ -29,7 +35,7 @@ export default function CadastroProduto() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
             navigate("/login")
             dispatch(addToken(token));
 
@@ -114,7 +120,7 @@ export default function CadastroProduto() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         } else {
 
@@ -132,7 +138,7 @@ export default function CadastroProduto() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         }
         back()
@@ -148,7 +154,7 @@ export default function CadastroProduto() {
 
             <form onSubmit={onSubmit}>
 
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastre um novo produto</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastre Seu Produto</Typography>
                 <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="Nome Do Produto" variant="outlined" name="nome" type="text" margin="normal" fullWidth />
                 <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="preço" name="preco" variant="outlined" type="number" margin="normal" fullWidth />
                 <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="descrição" name="descricao" type="text" variant="outlined" margin="normal" fullWidth />

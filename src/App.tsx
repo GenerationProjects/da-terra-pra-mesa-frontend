@@ -46,7 +46,6 @@ export default function App() {
             <Route path='/cadastrarCategoria/:id' element={<CadastrarCategoria />} />
             <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
 
-
             <Route path='/carrinho' element={<Carrinho />} />
 
             <Route path={`*`} element={<Navigate to={`/`} />} />

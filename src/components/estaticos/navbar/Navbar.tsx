@@ -112,9 +112,21 @@ export default function Navbar() {
           <Menu id="dropdown-menu" anchorEl={isActive} open={Boolean(isActive)} onClose={menuClose}>
 
             {
-              token !== '' ? (<>  <Box onClick={goLogout}>
-                <MenuItem onClick={menuClose}>Sair da Conta</MenuItem>
-              </Box></>) :
+              token !== '' ? (<>
+                <Link to={'/categorias'} className="text-decorator-none">
+                  <MenuItem onClick={menuClose}>Veja as categorias</MenuItem>
+                </Link>
+
+                <Link to={'/produtos'} className="text-decorator-none">
+                  <MenuItem onClick={menuClose}>Lista de produtos</MenuItem>
+                </Link>
+
+
+                <Box onClick={goLogout}>
+                  <MenuItem onClick={menuClose}>Sair da Conta</MenuItem>
+                </Box>
+
+              </>) :
 
                 (<>
                   <Link to={'/cadastro'} className="text-decorator-none">

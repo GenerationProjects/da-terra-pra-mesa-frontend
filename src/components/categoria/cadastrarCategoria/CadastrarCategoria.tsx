@@ -5,8 +5,9 @@ import { Button, Container, TextField, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
 import { toast } from 'react-toastify';
 import './cadastroCategoria.css'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 
 export default function CadastrarCategoria() {
 
@@ -15,7 +16,11 @@ export default function CadastrarCategoria() {
 
 
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useState('');
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
         tipo: '',
@@ -33,8 +38,8 @@ export default function CadastrarCategoria() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
-            dispatch(addToken(token))  
+            });
+            dispatch(addToken(token))
             navigate('/login')
         }
     }, [token])
@@ -83,7 +88,7 @@ export default function CadastrarCategoria() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         } else {
 
@@ -101,7 +106,7 @@ export default function CadastrarCategoria() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         }
         back()

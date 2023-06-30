@@ -1,50 +1,47 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { login } from "../../services/service";
 import { Link, useNavigate } from "react-router-dom";
 import { addToken } from "../../store/tokens/action";
-import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
-import ImgLogin from "../../assets/img/login-img.svg";
+import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
+import Arrow from "../../assets/img/Seta.svg";
 import UsuarioLogin from "../../models/UsuarioLogin";
+import ImgLogin from "../../assets/img/login-img.svg";
 import "./Login.css";
 
 export default function Login() {
 
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const [token, setToken] = useState('')
-    const [usuarioLogin, setUserLogin] = useState<UsuarioLogin>(
-        {
-            id: 0,
-            email: '',
-            senha: '',
-            token: ''
-        }
-    )
+    const [token, setToken] = useState("");
+    const [usuarioLogin, setUserLogin] = useState<UsuarioLogin>({
+        id: 0,
+        email: "",
+        senha: "",
+        token: "",
+    });
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-
         setUserLogin({
             ...usuarioLogin,
-            [e.target.name]: e.target.value
-        })
+            [e.target.name]: e.target.value,
+        });
     }
 
     useEffect(() => {
-        if (token != '') {
-            dispatch(addToken(token))
-            navigate('/home')
+        if (token != "") {
+            dispatch(addToken(token));
+            navigate("/home");
         }
-    }, [token])
+    }, [token]);
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
         try {
-
-            await login(`/usuarios/logar`, usuarioLogin, setToken)
-            toast.success('Usuário logado com sucesso!', {
+            await login(`/usuarios/logar`, usuarioLogin, setToken);
+            toast.success("Usuário logado com sucesso!", {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: true,
@@ -54,9 +51,8 @@ export default function Login() {
                 progress: undefined,
                 theme: "light",
             });
-
         } catch (error) {
-            toast.warn('Dados do usuário inconsistentes. Erro ao logar!', {
+            toast.warn("Dados do usuário inconsistentes. Erro ao logar!", {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: true,
@@ -69,46 +65,99 @@ export default function Login() {
         }
     }
 
-
     return (
         <>
-            <Grid container direction='row' justifyContent='center' alignItems='center' className="">
-                <Grid xs={6} className='grid-imagem'>
-                    <Box className="box-container">
-                        <Box>
-                            <Typography >
-                                <h1>Divulgue seus produtos na nossa plataforma</h1>
-                                Faça parte do nosso catálogo de divulgação e aumente a venda dos seus produtos.
-                            </Typography>
+            <Grid
+                container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                className="box-principal"
+            >
+                <Grid xs={6} className="grid-left">
+                    <Box className="box-container-left">
+                        <Box></Box>
+                        <Typography>
+                            <h1>Divulgue aqui seus produtos</h1>
+                            <p>
+                                Faça parte do nosso catálogo de divulgação e aumente suas
+                                vendas.
+                            </p>
+                        </Typography>
+                        <Box className="box-img-login">
+                            <img src={ImgLogin} alt="Desenho de rapaz fazendo login" />
                         </Box>
-                        <img src={ImgLogin} alt="" />
                     </Box>
                 </Grid>
-                <Grid alignItems='center' xs={6}>
-                    <Box paddingX={20} className="box-login">
+
+                <Grid xs={6} className="grid-right">
+                    <Box className="box-container-right">
                         <Box>
                             <form onSubmit={onSubmit}>
-                                <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' style={{ fontWeight: 'bold' }}>Entrar</Typography>
-                                <TextField value={usuarioLogin.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='email' variant='outlined' name='email' margin='normal' type="email" fullWidth />
-                                <TextField value={usuarioLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='filled' name='senha' margin='normal' type='password' fullWidth />
-                                <Box marginTop={2} textAlign='center'>
-                                    <Button type='submit' variant='contained' color='primary'>
-                                        Logar
-                                    </Button>
-                                </Box>
+                                <Typography
+                                    variant="h3"
+                                    gutterBottom
+                                    color="textPrimary"
+                                    component="h3"
+                                    align="center"
+                                >
+                                    Entrar
+                                </Typography>
+
+                                <TextField
+                                    value={usuarioLogin.email}
+                                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                        updatedModel(e)
+                                    }
+                                    id="email"
+                                    label="Digite seu e-mail"
+                                    variant="outlined"
+                                    name="email"
+                                    margin="normal"
+                                    type="email"
+                                    fullWidth
+                                />
+
+                                <TextField
+                                    value={usuarioLogin.senha}
+                                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                        updatedModel(e)
+                                    }
+                                    id="senha"
+                                    label="Digite sua senha"
+                                    variant="filled"
+                                    name="senha"
+                                    margin="normal"
+                                    type="password"
+                                    fullWidth
+                                />
+                                <Button type="submit" className="btn-caixa">
+                                    <Box className="btn-logar">
+                                        <p>LOGAR</p>
+                                        <Box className="btn-arrow-logar">
+                                            <img src={Arrow} alt="" className="arrow-img" />
+                                        </Box>
+                                    </Box>
+                                </Button>
                             </form>
                         </Box>
-                        <Box display='flex' justifyContent='center' marginTop={2}>
+
+                        <Box display="flex" justifyContent="center" marginTop={2} className="caixa-cadastrase">
                             <Box marginRight={1}>
-                                <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
+                                <Typography variant="subtitle1" gutterBottom align="center">
+                                    Não tem uma conta?
+                                </Typography>
                             </Box>
+
                             <Link to={`/cadastro`}>
-                                <Typography variant='subtitle1' gutterBottom align='center' style={{ fontWeight: 'bold' }}>Cadastre-se</Typography>
+                                <Typography className="text-decorator-none" variant="subtitle1" gutterBottom align="center" style={{ fontWeight: "bold" }}>
+                                    Cadastre-se
+                                </Typography>
                             </Link>
                         </Box>
                     </Box>
                 </Grid>
             </Grid>
         </>
-    )
+    );
 }

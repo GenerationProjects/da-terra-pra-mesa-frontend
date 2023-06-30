@@ -9,11 +9,13 @@
     margin: 2rem;
     height: 90vh;
     border-radius: 10px;
-    border: none !important;
-    flex-direction: row !important;
     background-color: #D5E4AD;
+}
+
+.grid-container {
+    height: 90vh;
+    border-radius: 10px;
     align-items: center;
-    padding: 0 2rem;
 }
 
 .title-h4 {
