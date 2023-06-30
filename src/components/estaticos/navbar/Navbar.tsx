@@ -25,7 +25,7 @@ function Navbar() {
       draggable: false,
       progress: undefined,
       theme: "light",
-      });
+    });
     navigate('/login');
   }
 
@@ -53,11 +53,6 @@ function Navbar() {
               </Box>
             </Link>
 
-            <Link to={`/sobre`} className="text-decorator-none">
-              <Box mx={1} className="p-1">
-                <Typography className="cursor">SOBRE NÓS</Typography>
-              </Box>
-            </Link>
 
             <Link to={`/catalogo`} className="text-decorator-none">
               <Box mx={1} className="p-1">
@@ -66,6 +61,32 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
+            {token !== "" ? (
+              <>
+                <Link to={`/cadastrarProduto`} className="text-decorator-none">
+                  <Box mx={1} className="p-1">
+                    <Typography className="cursor">
+                      VENDA CONOSCO
+                    </Typography>
+                  </Box>
+                </Link>
+
+                <Link to={`/cadastrarCategoria`} className="text-decorator-none">
+                  <Box mx={1} className="p-1">
+                    <Typography className="cursor">
+                      CRIE CATEGORIA
+                    </Typography>
+                  </Box>
+                </Link>
+              </>) : (<>
+                <Link to={`/sobre`} className="text-decorator-none">
+                  <Box mx={1} className="p-1">
+                    <Typography className="cursor">SOBRE NÓS</Typography>
+                  </Box>
+                </Link>
+              </>)
+
+            }
           </Box>
         </Toolbar>
         <Box display="flex" justifyContent="end">
@@ -73,19 +94,27 @@ function Navbar() {
             <img src={FotoFazendeiro} alt="Foto Fazendeiro" className="farm-img" />
           </IconButton>
           <Menu id="dropdown-menu" anchorEl={isActive} open={Boolean(isActive)} onClose={menuClose}>
-            <Link to={'/cadastro'} className="text-decorator-none">
-              <MenuItem onClick={menuClose}>Criar Conta</MenuItem>
-            </Link>
-            <Link to={'/login'} className="text-decorator-none">
-              <MenuItem onClick={menuClose}>Entrar na Conta</MenuItem>
-            </Link>
-            <Box onClick={goLogout}>
-              <MenuItem onClick={menuClose}>Sair da Conta</MenuItem>
-            </Box>
+
+            {
+              token !== '' ? (<>  <Box onClick={goLogout}>
+                <MenuItem onClick={menuClose}>Sair da Conta</MenuItem>
+              </Box></>) :
+
+                (<>
+                  <Link to={'/cadastro'} className="text-decorator-none">
+                    <MenuItem onClick={menuClose}>Criar Conta</MenuItem>
+                  </Link>
+
+                  <Link to={'/login'} className="text-decorator-none">
+                    <MenuItem onClick={menuClose}>Entrar na Conta</MenuItem>
+                  </Link></>
+                )
+            }
+
           </Menu>
 
         </Box>
-      </AppBar>
+      </AppBar >
     </>
   );
 }

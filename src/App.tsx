@@ -15,6 +15,7 @@ import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCat
 import CadastrarCategoria from './components/categoria/cadastrarCategoria/CadastrarCategoria'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Carrinho from './pages/carrinho/Carrinho'
 
 
 
@@ -22,24 +23,30 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-      <ToastContainer />
+        <ToastContainer />
         <Navbar />
         <div>
           <Routes>
 
-            <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
             <Route path='/' element={<Home />} />
             <Route path='/cadastro' element={<Cadastro />} />
             <Route path='/login' element={<Login />} />
             <Route path='/sobre' element={<Sobre />} />
+
             <Route path='/catalogo' element={<Catalogo />} />
+
+            <Route path='/produtos' element={<ListarProdutos />} />
             <Route path="/cadastrarProduto" element={<CadastroProduto />} />
             <Route path="/cadastrarProduto/:id" element={<CadastroProduto />} />
+            <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+
+            <Route path='/categorias' element={<ListarCategoria />} />
             <Route path='/cadastrarCategoria' element={<CadastrarCategoria />} />
             <Route path='/cadastrarCategoria/:id' element={<CadastrarCategoria />} />
-            <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
-            <Route path='/categorias' element={<ListarCategoria />} />
-            <Route path='/produtos' element={<ListarProdutos />} />
+            <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+
+
+            <Route path='/carrinho' element={<Carrinho />} />
 
           </Routes>
         </div>

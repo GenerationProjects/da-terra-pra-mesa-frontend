@@ -65,7 +65,7 @@ export default function Cadastro() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         } else {
             toast.warn('Dados inconsistentes. Favor verificar as informações de cadastro.', {
@@ -77,7 +77,7 @@ export default function Cadastro() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
         }
     }
 
