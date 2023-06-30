@@ -52,7 +52,16 @@ export default function Login() {
                 });
 
         } catch (error) {
-            alert('Dados do usuário inconsistentes. Erro ao logar!');
+            toast.warn('Dados do usuário inconsistentes. Erro ao logar!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
         }
     }
 
