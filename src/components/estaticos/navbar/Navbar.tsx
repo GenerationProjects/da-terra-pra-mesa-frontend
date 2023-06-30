@@ -26,6 +26,7 @@ export default function Navbar() {
 
     dispatch(addToken(''))
     navigate('/login')
+    
 
     toast.success('Usuário deslogado!', {
       position: 'top-right',
