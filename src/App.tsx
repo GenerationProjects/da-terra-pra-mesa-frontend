@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import Cadastro from './pages/cadastro/Cadastro'
@@ -47,6 +47,8 @@ export default function App() {
 
 
             <Route path='/carrinho' element={<Carrinho />} />
+
+            <Route path={`*`} element={<Navigate to={`/`} />} />
 
           </Routes>
         </div>
