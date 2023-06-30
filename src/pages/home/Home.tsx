@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import { Box, Grid, Typography } from "@material-ui/core";
 import Arrow from '../../assets/img/Seta.svg'
 import FruitShop from '../../assets/img/home-img.svg'
 import './home.css'
-import { Link } from "react-router-dom";
 
 export default function Home() {
     return (

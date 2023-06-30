@@ -53,6 +53,9 @@ export default function Cadastro() {
         e.preventDefault()
         if (confirmarSenha == usuario.senha) {
             cadastroUsuario(`/usuarios/cadastrar`, usuario, setUserResult)
+            alert('Usuario cadastrado com sucesso')
+            navigate('/login')
+
             toast.success('Usuario cadastrado com sucesso', {
                 position: "top-right",
                 autoClose: 2000,
@@ -63,6 +66,7 @@ export default function Cadastro() {
                 progress: undefined,
                 theme: "light",
                 });
+
         } else {
             toast.warn('Dados inconsistentes. Favor verificar as informações de cadastro.', {
                 position: "top-right",
@@ -86,7 +90,7 @@ export default function Cadastro() {
                         <Typography
                             variant="h3"
                             gutterBottom
-                            
+
                             component="h3"
                             align="center"
                             className="textos2"
