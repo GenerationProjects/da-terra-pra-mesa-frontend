@@ -7,8 +7,9 @@ import './catalogo.css'
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
-        boxShadow: "1px 2px 5px 1px #bbcfa4"
+        width: 245,
+        boxShadow: "1px 2px 5px 1px #bbcfa4",
+        
     },
 });
 
