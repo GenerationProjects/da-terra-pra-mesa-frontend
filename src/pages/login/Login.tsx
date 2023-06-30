@@ -5,6 +5,7 @@ import { login } from "../../services/service";
 import ImgLogin from "../../assets/img/login-img.svg";
 import useLocalStorage from "react-use-localstorage";
 import UsuarioLogin from "../../models/UsuarioLogin";
+import { toast } from 'react-toastify'
 import "./login.css";
 
 export default function Login() {
@@ -30,7 +31,7 @@ export default function Login() {
 
     useEffect(() => {
         if (token != '') {
-            navigate('/home')
+            navigate('/')
         }
     }, [token])
 
@@ -39,7 +40,16 @@ export default function Login() {
         try {
 
             await login(`/usuarios/logar`, usuarioLogin, setToken)
-            alert('Usuário logado com sucesso!');
+            toast.success('Usuário logado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
 
         } catch (error) {
             alert('Dados do usuário inconsistentes. Erro ao logar!');
