@@ -1,9 +1,9 @@
+import { ToastContainer } from 'react-toastify'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import Cadastro from './pages/cadastro/Cadastro'
 import Sobre from './pages/sobre/Sobre'
-import './App.css'
 import Navbar from './components/estaticos/navbar/Navbar'
 import Footer from './components/estaticos/footer/Footer'
 import Catalogo from './pages/catalogo/Catalogo'
@@ -13,9 +13,9 @@ import ListarCategoria from './components/categoria/listarCategoria/ListarCatego
 import ListarProdutos from './components/produto/listarProdutos/ListarProdutos'
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria'
 import CadastrarCategoria from './components/categoria/cadastrarCategoria/CadastrarCategoria'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import Carrinho from './pages/carrinho/Carrinho'
+import './App.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 
