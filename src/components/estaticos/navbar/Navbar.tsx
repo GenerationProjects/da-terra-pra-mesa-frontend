@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { toast } from 'react-toastify'
-import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { addToken } from '../../../store/tokens/action'
+import { TokenState } from '../../../store/tokens/tokenReducer'
 import { AppBar, Box, Toolbar, Typography } from '@material-ui/core'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
@@ -12,14 +13,20 @@ import FotoFazendeiro from '../../../assets/img/farmer.svg'
 import './Navbar.css'
 
 export default function Navbar() {
-  
+
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const [token, setToken] = useState('')
 
   const goLogout = () => {
-    setToken('')
+
+    dispatch(addToken(''))
+    navigate('/login')
+
     toast.success('Usuário deslogado!', {
       position: 'top-right',
       autoClose: 2000,
@@ -30,9 +37,6 @@ export default function Navbar() {
       progress: undefined,
       theme: 'light'
     })
-    dispatch(addToken(token))
-    navigate('/login')
-
   }
 
   const [isActive, setIsActive] = useState(null)
