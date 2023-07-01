@@ -1,13 +1,13 @@
+import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToken } from '../../../store/tokens/action';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, post, put } from '../../../services/service';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Button, Container, TextField, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
-import { toast } from 'react-toastify';
-import './cadastroCategoria.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { addToken } from '../../../store/tokens/action';
-import { TokenState } from '../../../store/tokens/tokenReducer';
+import './cadastroCategoria.css';
 
 export default function CadastrarCategoria() {
 

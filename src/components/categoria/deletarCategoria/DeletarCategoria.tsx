@@ -1,13 +1,13 @@
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { addToken } from "../../../store/tokens/action";
 import { useNavigate, useParams } from "react-router-dom";
 import { buscaId, deleteId } from "../../../services/service";
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import Categoria from "../../../models/Categoria";
 import './DeletarCategoria.css'
-import { TokenState } from '../../../store/tokens/tokenReducer';
 
 export default function DeletarCategoria() {
 
