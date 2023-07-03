@@ -12,10 +12,11 @@ import './DeletarProduto.css';
 
 function DeletarProduto() {
 
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
 
-  const { id } = useParams<{ id: string }>()
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
 
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens

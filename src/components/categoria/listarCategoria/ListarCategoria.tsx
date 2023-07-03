@@ -15,11 +15,11 @@ export default function ListarCategoria() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const [categorias, setCategoria] = useState<Categoria[]>([]);
-
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-    );
+      );
+
+    const [categorias, setCategoria] = useState<Categoria[]>([]);
 
     useEffect(() => {
         if (token == '') {
