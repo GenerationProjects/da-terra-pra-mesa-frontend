@@ -36,6 +36,7 @@ export default function Navbar() {
       theme: 'light'
     })
     navigate('/login')
+
   }
 
   const [isActive, setIsActive] = useState(null)

@@ -52,7 +52,6 @@ export default function Cadastro() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         if (confirmarSenha == usuario.senha) {
-
             cadastroUsuario(`/usuarios/cadastrar`, usuario, setUserResult)
             toast.success('Usuario cadastrado com sucesso', {
                 position: "top-right",
