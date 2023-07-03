@@ -14,7 +14,6 @@ export default function CadastrarCategoria() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-
     const { id } = useParams<{ id: string }>();
 
     const token = useSelector<TokenState, TokenState["tokens"]>(

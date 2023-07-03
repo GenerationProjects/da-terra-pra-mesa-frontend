@@ -9,6 +9,7 @@ import { Box, Button, Card, CardActions, CardContent, Typography } from "@materi
 import Categoria from "../../../models/Categoria";
 import './DeletarCategoria.css'
 
+
 export default function DeletarCategoria() {
 
   const dispatch = useDispatch()
@@ -19,7 +20,7 @@ export default function DeletarCategoria() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
-  
+
   const { id } = useParams<{ id: string }>()
 
   useEffect(() => {
@@ -33,9 +34,9 @@ export default function DeletarCategoria() {
         draggable: false,
         progress: undefined,
         theme: "light",
-        });
+      });
       dispatch(addToken(token))
-      navigate ('/login')
+      navigate('/login')
     }
   }, [token])
 

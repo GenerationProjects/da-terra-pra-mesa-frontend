@@ -13,12 +13,12 @@ export default function ListarProdutos() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    
+
+    const [produtos, setProduto] = useState<Produto[]>([])
+
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
-
-    const [produtos, setProduto] = useState<Produto[]>([])
 
     useEffect(() => {
         if (token == '') {
@@ -60,7 +60,7 @@ export default function ListarProdutos() {
                                 Produto
                             </Typography>
                             <Typography variant="h5" component="h2" >
-                                <img src={produto.imagem} alt="" className='.img-produto' />
+                                <img src={produto.imagem} alt="" className='img-produto' />
                             </Typography>
                             <Typography variant="body2" component="p">
                                 {produto.nome}

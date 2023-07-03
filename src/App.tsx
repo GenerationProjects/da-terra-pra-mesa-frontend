@@ -22,14 +22,12 @@ import 'react-toastify/dist/ReactToastify.css'
 export default function App() {
   return (
     <>
-      <Provider store={store}>
-        <BrowserRouter>
-          <ToastContainer />
-          <Navbar />
-          <div>
-            <Routes>
-
-
+    <Provider store={store}>
+      <BrowserRouter>
+        <ToastContainer />
+        <Navbar />
+        <div>
+          <Routes>
               {/*Rotas comuns */}
               <Route path='/' element={<Home />} />
               <Route path='/cadastro' element={<Cadastro />} />
@@ -51,13 +49,11 @@ export default function App() {
               <Route path='/cadastrarCategoria/:id' element={<CadastrarCategoria />} />
               <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
 
-
               {/*Rota para carrinho de compra */}
               <Route path='/carrinho' element={<Carrinho />} />
 
               {/*Segurança de rotas */}
               <Route path={`*`} element={<Navigate to={`/`} />} />
-
             </Routes>
           </div>
           <Footer />

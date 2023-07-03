@@ -9,6 +9,7 @@ import { Box, Button, Card, CardActions, CardContent, Typography } from '@materi
 import Categoria from '../../../models/Categoria';
 import './ListarCategoria.css';
 
+
 export default function ListarCategoria() {
 
     const navigate = useNavigate()
@@ -31,7 +32,8 @@ export default function ListarCategoria() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
+
             dispatch(addToken(token))
             navigate("/login")
         }

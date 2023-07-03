@@ -11,7 +11,6 @@ import Produto from '../../../models/Produto';
 import './DeletarProduto.css';
 
 function DeletarProduto() {
-
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
@@ -19,7 +18,6 @@ function DeletarProduto() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
-
 
   const [produto, setProduto] = useState<Produto>()
 
