@@ -16,31 +16,23 @@ export default function Navbar() {
 
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  );
+);
+const dispatch = useDispatch();
+const navigator = useNavigate();
 
-
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
-
-  const goLogout = () => {
-
+function goLogout() {
     dispatch(addToken(''))
-    navigate('/login')
-
-    toast.success('Usuário deslogado!', {
-      position: 'top-right',
-      autoClose: 2000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
-      theme: 'light'
+    toast.info('Usuario deslogado!', {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
     })
-    dispatch(addToken(token))
-    navigate('/login')
-
+    navigator('/login')
   }
 
   const [isActive, setIsActive] = useState(null)
