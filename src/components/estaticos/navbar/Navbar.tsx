@@ -64,7 +64,7 @@ export default function Navbar() {
             </Link>
 
 
-            <Link to={`/produtos`} className="text-decorator-none">
+            <Link to={`/catalogo`} className="text-decorator-none">
               <Box mx={1} className="p-1">
                 <Typography variant='h6' className="cursor">CATÁLOGO</Typography>
               </Box>
