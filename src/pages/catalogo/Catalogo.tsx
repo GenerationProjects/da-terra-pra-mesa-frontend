@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import { buscaSimples } from '../../services/service';
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, makeStyles } from '@material-ui/core'
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, makeStyles } from '@material-ui/core'
 import Produto from '../../models/Produto';
-import './Catalogo.css'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
+import './catalogo.css'
+
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        width: 245,
+        boxShadow: "1px 2px 5px 1px #bbcfa4",
+        
     },
 });
 
@@ -25,36 +29,44 @@ export default function Catalogo() {
 
     return (
         <>
-            {produtos.map(produto => (
-                <Card className={classes.root}>
-                    <CardActionArea>
-                        <CardMedia
-                            component="img"
-                            alt="Contemplative Reptile"
-                            height="140"
-                            image={produto.imagem}
-                            title="Contemplative Reptile"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                {produto.nome}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                R$ {produto.preco}
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                            Aqui carrinho de compras
-                        </Button>
-                        <Button size="small" color="primary">
+            <Grid container spacing={2} className='catPrincipalGrid'>
 
-                        </Button>
-                    </CardActions>
-                </Card>
-            ))
-            }
+                {produtos.map(produto => (
+                    <Grid item key={produto.id} xs={12} sm={6} md={3} className='cardGrid'>
+                        <Card className={classes.root}>
+                            <CardActionArea>
+                                <div className='tamanhoDoCard'>
+                                <CardMedia
+                                    className='imgCardCat'
+                                    component="img"
+                                    alt="Contemplative Reptile"
+                                    height="150"
+                                    image={produto.imagem}
+                                    title="Contemplative Reptile"
+                                />
+                                </div>
+                                <CardContent className='nomeCard'>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {produto.nome}
+                                    </Typography>
+                                    <div className='iconPreco'>
+                                    <Typography variant="body2" color="textSecondary" component="p">
+                                        R$ {produto.preco}
+                                    </Typography>
+                                    <CardActions className='btnCarrinhoBG'>
+                                        <Button size="small" className='btnCarrinho'>
+                                            <AddShoppingCartIcon />
+                                        </Button>
+                                    </CardActions>
+                                    </div>
+                                </CardContent>
+                            </CardActionArea>
+
+                        </Card>
+                    </Grid>
+                ))
+                }
+            </Grid>
         </>
     )
 }

@@ -18,15 +18,13 @@ export default function Navbar() {
     (state) => state.tokens
   );
 
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
 
   const goLogout = () => {
-
     dispatch(addToken(''))
-    navigate('/login')
-
     toast.success('Usuário deslogado!', {
       position: 'top-right',
       autoClose: 2000,
@@ -37,6 +35,8 @@ export default function Navbar() {
       progress: undefined,
       theme: 'light'
     })
+    navigate('/login')
+
   }
 
   const [isActive, setIsActive] = useState(null)
@@ -59,21 +59,21 @@ export default function Navbar() {
           <Box display="flex">
             <Link to={`/`} className="text-decorator-none">
               <Box mx={1} className="p-1">
-                <Typography className="cursor">HOME</Typography>
+                <Typography variant='h6' className="cursor">HOME</Typography>
               </Box>
             </Link>
 
 
             <Link to={`/produtos`} className="text-decorator-none">
               <Box mx={1} className="p-1">
-                <Typography className="cursor">CATÁLOGO</Typography>
+                <Typography variant='h6' className="cursor">CATÁLOGO</Typography>
               </Box>
             </Link>
             {token !== "" ? (
               <>
                 <Link to={`/cadastrarProduto`} className="text-decorator-none">
                   <Box mx={1} className="p-1">
-                    <Typography className="cursor">
+                    <Typography variant='h6' className="cursor">
                       VENDA CONOSCO
                     </Typography>
                   </Box>
@@ -81,7 +81,7 @@ export default function Navbar() {
 
                 <Link to={`/cadastrarCategoria`} className="text-decorator-none">
                   <Box mx={1} className="p-1">
-                    <Typography className="cursor">
+                    <Typography variant='h6' className="cursor">
                       CRIE CATEGORIA
                     </Typography>
                   </Box>
@@ -89,7 +89,7 @@ export default function Navbar() {
               </>) : (<>
                 <Link to={`/sobre`} className="text-decorator-none">
                   <Box mx={1} className="p-1">
-                    <Typography className="cursor">SOBRE NÓS</Typography>
+                    <Typography variant='h6' className="cursor">SOBRE NÓS</Typography>
                   </Box>
                 </Link>
               </>)
@@ -113,10 +113,21 @@ export default function Navbar() {
           <Menu id="dropdown-menu" anchorEl={isActive} open={Boolean(isActive)} onClose={menuClose}>
 
             {
-              token !== '' ? (<>  <Box onClick={goLogout}>
-                <MenuItem onClick={menuClose}>Sair da Conta</MenuItem>
-              </Box></>) :
+              token !== '' ? (<>
+                <Link to={'/categorias'} className="text-decorator-none">
+                  <MenuItem onClick={menuClose}>Veja as categorias</MenuItem>
+                </Link>
 
+                <Link to={'/produtos'} className="text-decorator-none">
+                  <MenuItem onClick={menuClose}>Lista de produtos</MenuItem>
+                </Link>
+
+
+                <Box onClick={goLogout}>
+                  <MenuItem onClick={menuClose}>Sair da Conta</MenuItem>
+                </Box>
+
+              </>) :
                 (<>
                   <Link to={'/cadastro'} className="text-decorator-none">
                     <MenuItem onClick={menuClose}>Criar Conta</MenuItem>
@@ -127,7 +138,6 @@ export default function Navbar() {
                   </Link></>
                 )
             }
-
           </Menu>
         </Box>
       </AppBar >

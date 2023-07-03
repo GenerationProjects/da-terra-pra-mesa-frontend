@@ -1,24 +1,41 @@
 import { Box } from '@mui/material';
 import { toast } from 'react-toastify';
+<<<<<<< HEAD
 import { useDispatch, useSelector } from 'react-redux';
+=======
+>>>>>>> 9e0e7632b807a8a7a23a9b294292695da9bd560b
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/service';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Typography, Button, Card, CardActions, CardContent } from "@material-ui/core";
 import Produto from '../../../models/Produto';
 import './DeletarProduto.css';
 import { TokenState } from '../../../store/tokens/tokenReducer';
 
 function DeletarProduto() {
+<<<<<<< HEAD
 
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
   const navigate = useNavigate()
+=======
+>>>>>>> 9e0e7632b807a8a7a23a9b294292695da9bd560b
   const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
 
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
+<<<<<<< HEAD
   const { id } = useParams<{ id: string }>()
+=======
+>>>>>>> 9e0e7632b807a8a7a23a9b294292695da9bd560b
   const [produto, setProduto] = useState<Produto>()
 
   useEffect(() => {

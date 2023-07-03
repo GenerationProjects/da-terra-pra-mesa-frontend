@@ -1,0 +1,55 @@
+.catPrincipalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+  padding: 3rem;
+}
+
+.cardGrid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 2rem !important;
+}
+
+.nomeCard {
+  border-top: 1px solid #d5e4ad;
+}
+
+.btnCarrinho {
+  display: block;
+  margin: 0 auto;
+  background-color: #2F3912 !important;
+  color: #d5e4ad !important;
+  border: 1px solid #d5e4ad !important;
+  transition: all 200ms ease-in-out;
+}
+
+.btnCarrinho:hover {
+  background-color: #d5e4ad !important;
+  color: #2F3912 !important;
+  border: 1px solid #2F3912 !important;
+}
+
+.iconPreco {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnCarrinhoBG {
+  display: flex;
+  justify-content: center;
+}
+
+.tamanhoDoCard {
+  margin: 1rem 2rem;
+
+}
+
+.imgCardCat {
+  display: block;
+  margin: 0 auto;
+  width: fit-content !important;
+  object-fit: cover;
+}

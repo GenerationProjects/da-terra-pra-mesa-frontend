@@ -1,23 +1,26 @@
+import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToken } from '../../../store/tokens/action';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, post, put } from '../../../services/service';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Button, Container, TextField, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
-import { toast } from 'react-toastify';
-import './cadastroCategoria.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { addToken } from '../../../store/tokens/action';
-import { TokenState } from '../../../store/tokens/tokenReducer';
+import './cadastroCategoria.css';
+
 
 export default function CadastrarCategoria() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
+    const { id } = useParams<{ id: string }>();
+
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-      );
-    const { id } = useParams<{ id: string }>();
+    );
+
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
         tipo: '',
@@ -35,8 +38,9 @@ export default function CadastrarCategoria() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
-            dispatch(addToken(''))  
+            });
+            dispatch(addToken(token))
+
             navigate('/login')
         }
     }, [token])
@@ -85,7 +89,8 @@ export default function CadastrarCategoria() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
+            back();
 
         } else {
 
@@ -103,7 +108,7 @@ export default function CadastrarCategoria() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         }
         back()

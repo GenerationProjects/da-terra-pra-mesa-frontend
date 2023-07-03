@@ -1,9 +1,14 @@
 import { toast } from 'react-toastify';
+<<<<<<< HEAD
 import { useDispatch, useSelector } from 'react-redux';
+=======
+>>>>>>> 9e0e7632b807a8a7a23a9b294292695da9bd560b
 import { useEffect, useState } from 'react';
 import { busca } from '../../../services/service';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Produto from '../../../models/Produto';
 import './listarProdutos.css';
@@ -16,9 +21,17 @@ export default function ListarProdutos() {
       );
     const navigate = useNavigate()
     const dispatch = useDispatch()
+<<<<<<< HEAD
     
     const [produtos, setProduto] = useState<Produto[]>([])
+=======
+>>>>>>> 9e0e7632b807a8a7a23a9b294292695da9bd560b
 
+    const [produtos, setProduto] = useState<Produto[]>([])
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == '') {
@@ -31,7 +44,7 @@ export default function ListarProdutos() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
             navigate('/login')
             dispatch(addToken(''));
         }
@@ -60,7 +73,7 @@ export default function ListarProdutos() {
                                 Produto
                             </Typography>
                             <Typography variant="h5" component="h2" >
-                                <img src={produto.imagem} alt="" className='.img-produto'/>
+                                <img src={produto.imagem} alt="" className='img-produto' />
                             </Typography>
                             <Typography variant="body2" component="p">
                                 {produto.nome}

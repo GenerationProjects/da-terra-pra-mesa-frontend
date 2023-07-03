@@ -1,21 +1,23 @@
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { busca } from '../../../services/service';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
 import './ListarCategoria.css';
-import { TokenState } from '../../../store/tokens/tokenReducer';
+
 
 export default function ListarCategoria() {
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
       );
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
 
     const [categorias, setCategoria] = useState<Categoria[]>([]);
 
@@ -31,7 +33,7 @@ export default function ListarCategoria() {
                 progress: undefined,
                 theme: "light",
                 });
-            dispatch(addToken(''))
+            dispatch(addToken(token))
             navigate("/login")
         }
     }, [token])
