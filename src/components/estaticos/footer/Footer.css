@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Quicksand:wght@300;400;700&family=Roboto:wght@100;300;400&display=swap');
+
 .box1{
   background-color: #D5E4AD;
   display: flex;
   width: 100%;
-  height: 8rem;
+  height: 7.2rem;
 }
 
 .boxLogo {
@@ -26,9 +28,10 @@
 }
 
 .textoFooter{
+  font-family: 'Quicksand' !important;
   color: #65743C;
   font-size: 20px !important;
-  font-weight: bold !important;
+  font-weight: 700 !important;
   margin-top: 1rem !important;
 }
 
@@ -36,24 +39,33 @@
   display: flex;
 }
 
-.redes{
-  font-size: 30px !important;
-  color: #65743C;
-  padding: 1px;
-}
-
-.itemLista a {
-
-  width: 9rem;
-  display: flex ;
+.itemLista {
+  width: auto !important;
+  display: flex !important; ;
   flex-direction: row;  
   align-items: flex-end;
   justify-content: center;
-  color: #65743C;
-  font-size: 1.2rem !important;
- text-decoration: none;
+  color: #65743C !important;    
 }
 
-.boxListaImg {
+.textoLista {
+  font-family: 'Quicksand' !important;
+  font-size: 1.1rem !important;
+}
 
+.itemLista a {
+  
+  padding-left: 7px;
+  color: #65743C !important;
+}
+
+.copyright {
+  font-family: 'Quicksand' !important;
+  background-color: #D5E4AD;  
+  border-top: 0.15rem solid #F6F8E8;
+  height: 1.2rem;
+  display: flex;
+  font-size: 1rem !important;
+  color: #65743C !important;
+  padding: 0.2rem;
 }
