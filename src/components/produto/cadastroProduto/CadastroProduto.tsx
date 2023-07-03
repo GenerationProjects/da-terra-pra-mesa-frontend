@@ -9,13 +9,10 @@ import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem,
 import Produto from '../../../models/Produto';
 import Categoria from '../../../models/Categoria';
 import './CadastroProduto.css';
-import { TokenState } from '../../../store/tokens/tokenReducer';
 
 export default function CadastroProduto() {
 
-    const token = useSelector<TokenState, TokenState["tokens"]>(
-        (state) => state.tokens
-      );
+    
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { id } = useParams<{ id: string }>()
@@ -40,7 +37,7 @@ export default function CadastroProduto() {
                 theme: "light",
             });
             navigate("/login")
-            dispatch(addToken(''));
+            dispatch(addToken(token));
 
         }
     }, [token])

@@ -1,7 +1,18 @@
 import React from 'react'
 import './Footer.css'
-import { Box, Grid, Typography } from '@material-ui/core'
+import {
+  Box,
+  Grid,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Typography
+} from '@material-ui/core'
 import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import LogoFooter from '../../../assets/img/logo footer.svg'
 
 function Footer() {
   return (
@@ -11,43 +22,76 @@ function Footer() {
         direction="row"
         justifyContent="center"
         alignContent="center"
+        xs={12}
       >
-          <Box className="box1">
-            <Grid item xs={12}>
-              <Box alignItems="center" justifyContent="start" className='logoFooter'>
-              
-                <Typography
-                  variant="h5"
-                  
-                  gutterBottom
-                  className="textoFooter"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, accusantium ab vitae eligendi, quod voluptates minima odit possimus ex pariatur necessitatibus provident suscipit consectetur iste, repellendus eius? Voluptates, aliquam necessitatibus.
-                </Typography>
-              </Box>
-              
-            </Grid>
-            <Grid item xs={12} justifyContent='center'>
+        <Box className="box1">
+          <Grid item xs={5}>
+            <Box alignItems="center" justifyContent="start" className="boxLogo">
+              <img src={LogoFooter} alt="" className="logoFooter" />
+            </Box>
+          </Grid>
+
+          <Grid item xs={7} justifyContent="center">
             <Box className="box2">
-              <Box display="flex" alignItems="center" justifyContent="center">
-                <a href="https://https://github.com/GenerationProjects/da-terra-pra-mesa-frontend">
-                  <GitHubIcon className="redes" />
-                </a>
-              </Box>
               <Typography
-                variant="subtitle2"
+                variant="h6"
                 gutterBottom
                 align="center"
                 className="textoFooter"
               >
-                Feito por Ana, Drika, Felipe, Gabriela e Wesley -
-                Alunos da Generation Brasil
+                Time de desenvolvedores:
               </Typography>
+              <Box className='boxDev'>
+              <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Adriana
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+              <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Felipe
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+                <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Ana Rosa
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+                <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Gabriela
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+                <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Wesley
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+                </Box>
             </Box>
-            </Grid>
-          </Box>
-        </Grid>
-    
+          </Grid>
+        </Box>
+      </Grid>
     </>
   )
 }

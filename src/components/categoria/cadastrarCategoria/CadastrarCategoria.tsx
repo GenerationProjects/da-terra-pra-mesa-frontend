@@ -40,7 +40,6 @@ export default function CadastrarCategoria() {
                 theme: "light",
             });
             dispatch(addToken(token))
-
             navigate('/login')
         }
     }, [token])
