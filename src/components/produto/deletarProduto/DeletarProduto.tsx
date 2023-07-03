@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/service';
@@ -11,9 +11,6 @@ import Produto from '../../../models/Produto';
 import './DeletarProduto.css';
 
 function DeletarProduto() {
-
-
-
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();

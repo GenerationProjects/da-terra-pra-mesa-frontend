@@ -23,7 +23,6 @@ export default function DeletarCategoria() {
 
   const { id } = useParams<{ id: string }>()
 
-
   useEffect(() => {
     if (token == '') {
       toast.warn('Necessário estar logado!', {

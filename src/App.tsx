@@ -26,10 +26,8 @@ export default function App() {
       <BrowserRouter>
         <ToastContainer />
         <Navbar />
-        <div>
+        <div className='corpo'>
           <Routes>
-
-
               {/*Rotas comuns */}
               <Route path='/' element={<Home />} />
               <Route path='/cadastro' element={<Cadastro />} />
@@ -56,7 +54,6 @@ export default function App() {
 
               {/*Segurança de rotas */}
               <Route path={`*`} element={<Navigate to={`/`} />} />
-
             </Routes>
           </div>
           <Footer />

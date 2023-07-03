@@ -16,23 +16,27 @@ export default function Navbar() {
 
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-);
-const dispatch = useDispatch();
-const navigator = useNavigate();
+  );
 
-function goLogout() {
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+
+  const goLogout = () => {
     dispatch(addToken(''))
-    toast.info('Usuario deslogado!', {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "colored",
-        progress: undefined,
+    toast.success('Usuário deslogado!', {
+      position: 'top-right',
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: 'light'
     })
-    navigator('/login')
+    navigate('/login')
+
   }
 
   const [isActive, setIsActive] = useState(null)
@@ -55,21 +59,21 @@ function goLogout() {
           <Box display="flex">
             <Link to={`/`} className="text-decorator-none">
               <Box mx={1} className="p-1">
-                <Typography className="cursor">HOME</Typography>
+                <Typography variant='h6' className="cursor">HOME</Typography>
               </Box>
             </Link>
 
 
             <Link to={`/catalogo`} className="text-decorator-none">
               <Box mx={1} className="p-1">
-                <Typography className="cursor">CATÁLOGO</Typography>
+                <Typography variant='h6' className="cursor">CATÁLOGO</Typography>
               </Box>
             </Link>
             {token !== "" ? (
               <>
                 <Link to={`/cadastrarProduto`} className="text-decorator-none">
                   <Box mx={1} className="p-1">
-                    <Typography className="cursor">
+                    <Typography variant='h6' className="cursor">
                       VENDA CONOSCO
                     </Typography>
                   </Box>
@@ -77,7 +81,7 @@ function goLogout() {
 
                 <Link to={`/cadastrarCategoria`} className="text-decorator-none">
                   <Box mx={1} className="p-1">
-                    <Typography className="cursor">
+                    <Typography variant='h6' className="cursor">
                       CRIE CATEGORIA
                     </Typography>
                   </Box>
@@ -85,7 +89,7 @@ function goLogout() {
               </>) : (<>
                 <Link to={`/sobre`} className="text-decorator-none">
                   <Box mx={1} className="p-1">
-                    <Typography className="cursor">SOBRE NÓS</Typography>
+                    <Typography variant='h6' className="cursor">SOBRE NÓS</Typography>
                   </Box>
                 </Link>
               </>)

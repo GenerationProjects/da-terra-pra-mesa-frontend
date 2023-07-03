@@ -88,7 +88,6 @@ export default function CadastrarCategoria() {
                 progress: undefined,
                 theme: "light",
             });
-
             back();
 
         } else {

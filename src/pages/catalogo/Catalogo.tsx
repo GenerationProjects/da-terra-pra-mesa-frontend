@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { buscaSimples } from '../../services/service';
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, SvgIcon, Typography, makeStyles } from '@material-ui/core'
+import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, makeStyles } from '@material-ui/core'
 import Produto from '../../models/Produto';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import './catalogo.css'
+
 
 const useStyles = makeStyles({
     root: {
