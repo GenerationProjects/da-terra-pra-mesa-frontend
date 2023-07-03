@@ -20,7 +20,6 @@ export default function ListarProdutos() {
         (state) => state.tokens
     );
 
-
     useEffect(() => {
         if (token == '') {
             toast.warn('Você precisa estar logado!!', {

@@ -14,7 +14,6 @@ export default function CadastrarCategoria() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-
     const { id } = useParams<{ id: string }>();
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -40,6 +39,7 @@ export default function CadastrarCategoria() {
                 theme: "light",
             });
             dispatch(addToken(token))
+
             navigate('/login')
         }
     }, [token])

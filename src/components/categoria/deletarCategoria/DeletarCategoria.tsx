@@ -9,6 +9,7 @@ import { Box, Button, Card, CardActions, CardContent, Typography } from "@materi
 import Categoria from "../../../models/Categoria";
 import './DeletarCategoria.css'
 
+
 export default function DeletarCategoria() {
 
   const dispatch = useDispatch()
@@ -21,7 +22,6 @@ export default function DeletarCategoria() {
   );
 
   const { id } = useParams<{ id: string }>()
-
 
   useEffect(() => {
     if (token == '') {

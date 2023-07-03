@@ -9,6 +9,7 @@ import { Box, Button, Card, CardActions, CardContent, Typography } from '@materi
 import Categoria from '../../../models/Categoria';
 import './ListarCategoria.css';
 
+
 export default function ListarCategoria() {
 
     const navigate = useNavigate()
@@ -19,7 +20,6 @@ export default function ListarCategoria() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
-
 
     useEffect(() => {
         if (token == '') {
@@ -33,6 +33,7 @@ export default function ListarCategoria() {
                 progress: undefined,
                 theme: "light",
             });
+
             dispatch(addToken(token))
             navigate("/login")
         }

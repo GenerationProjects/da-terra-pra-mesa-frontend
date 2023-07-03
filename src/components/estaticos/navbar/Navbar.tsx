@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
@@ -27,6 +28,29 @@ export default function Navbar() {
     dispatch(addToken(''))
     navigate('/login')
 
+=======
+import { AppBar, Box, Toolbar, Typography } from '@material-ui/core'
+import { Link, useNavigate } from 'react-router-dom'
+import FotoFazendeiro from '../../../assets/img/farmer.svg'
+import FotoLogo from '../../../assets/img/logo.svg'
+import { useState } from 'react'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import IconButton from '@mui/material/IconButton'
+import './Navbar.css'
+import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { addToken } from '../../../store/tokens/action'
+
+function Navbar() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const [token, setToken] = useState('')
+
+  const goLogout = () => {
+    setToken('')
+>>>>>>> 575463a (Incluido Redux nas paginas para segurança do token)
     toast.success('Usuário deslogado!', {
       position: 'top-right',
       autoClose: 2000,
@@ -36,12 +60,22 @@ export default function Navbar() {
       draggable: false,
       progress: undefined,
       theme: 'light'
+<<<<<<< HEAD
     })
+=======
+    })    
+    dispatch(addToken(token))
+    navigate('/login')
+>>>>>>> 575463a (Incluido Redux nas paginas para segurança do token)
   }
 
   const [isActive, setIsActive] = useState(null)
 
+<<<<<<< HEAD
   const menuOpen = (event: any) => {
+=======
+  const menuOpen = event => {
+>>>>>>> 575463a (Incluido Redux nas paginas para segurança do token)
     setIsActive(event.currentTarget)
   }
 
@@ -109,6 +143,7 @@ export default function Navbar() {
               className="farm-img"
             />
           </IconButton>
+<<<<<<< HEAD
           <Menu id="dropdown-menu" anchorEl={isActive} open={Boolean(isActive)} onClose={menuClose}>
 
             {
@@ -139,6 +174,23 @@ export default function Navbar() {
                 )
             }
 
+=======
+          <Menu
+            id="dropdown-menu"
+            anchorEl={isActive}
+            open={Boolean(isActive)}
+            onClose={menuClose}
+          >
+            <Link to={'/cadastro'} className="text-decorator-none">
+              <MenuItem onClick={menuClose}>Criar Conta</MenuItem>
+            </Link>
+            <Link to={'/login'} className="text-decorator-none">
+              <MenuItem onClick={menuClose}>Entrar na Conta</MenuItem>
+            </Link>
+            <Box onClick={goLogout}>
+              <MenuItem onClick={menuClose}>Sair da Conta</MenuItem>
+            </Box>
+>>>>>>> 575463a (Incluido Redux nas paginas para segurança do token)
           </Menu>
         </Box>
       </AppBar >
@@ -146,4 +198,8 @@ export default function Navbar() {
   )
 }
 
+<<<<<<< HEAD
 
+=======
+export default Navbar
+>>>>>>> 575463a (Incluido Redux nas paginas para segurança do token)

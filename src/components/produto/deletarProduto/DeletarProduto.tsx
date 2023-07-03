@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react';
 import { addToken } from '../../../store/tokens/action';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/service';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Typography, Button, Card, CardActions, CardContent } from "@material-ui/core";
 import Produto from '../../../models/Produto';
 import './DeletarProduto.css';
-import { TokenState } from '../../../store/tokens/tokenReducer';
 
 function DeletarProduto() {
 

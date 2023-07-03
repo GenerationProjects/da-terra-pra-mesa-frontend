@@ -31,9 +31,9 @@ export default function Login() {
     }
 
     useEffect(() => {
-        if (token != "") {
-            dispatch(addToken(token));
-            navigate("/home");
+        if (token != '') {
+            dispatch(addToken(token))
+            navigate('/home')
         }
     }, [token]);
 
