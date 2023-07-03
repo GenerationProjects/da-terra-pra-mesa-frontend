@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -8,14 +8,17 @@ import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem,
 import Produto from '../../../models/Produto';
 import Categoria from '../../../models/Categoria';
 import './CadastroProduto.css';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 
 export default function CadastroProduto() {
 
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { id } = useParams<{ id: string }>()
     const [categorias, setCategorias] = useState<Categoria[]>([])
-    const [token, setToken] = useState('')
 
     useEffect(() => {
         if (token == "") {
@@ -31,7 +34,7 @@ export default function CadastroProduto() {
                 theme: "light",
                 });
             navigate("/login")
-            dispatch(addToken(token));
+            dispatch(addToken(''));
 
         }
     }, [token])

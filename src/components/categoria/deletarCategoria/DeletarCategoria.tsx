@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { addToken } from "../../../store/tokens/action";
 import { useNavigate, useParams } from "react-router-dom";
@@ -7,14 +7,17 @@ import { buscaId, deleteId } from "../../../services/service";
 import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import Categoria from "../../../models/Categoria";
 import './DeletarCategoria.css'
+import { TokenState } from '../../../store/tokens/tokenReducer';
 
 export default function DeletarCategoria() {
   
   const dispatch = useDispatch()
   const navigate = useNavigate()
   
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   const [categoria, setCategoria] = useState<Categoria>()
-  const [token, setToken] = useState('')
   const {id} = useParams<{id: string}>()
 
     
@@ -30,7 +33,7 @@ export default function DeletarCategoria() {
         progress: undefined,
         theme: "light",
         });
-      dispatch(addToken(token))
+      dispatch(addToken(''))
       navigate ('/login')
     }
   },[token])

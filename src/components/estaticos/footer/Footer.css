@@ -1,10 +1,19 @@
 .box1{
   background-color: #D5E4AD;
+  display: flex;
 }
 
-.textos{
+.logoFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-direction: row;
+}
+
+.textoFooter{
   color: #65743C;
-  font-weight: bold !important;
+  font-size: 15px !important;
+  padding-left: 20px;
 }
 
 .redes{

@@ -1,12 +1,12 @@
 import { Provider } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import './App.css'
 import store from './store/store'
-import { ToastContainer } from 'react-toastify'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import Sobre from './pages/sobre/Sobre'
+import 'react-toastify/dist/ReactToastify.css'
 import Cadastro from './pages/cadastro/Cadastro'
 import Carrinho from './pages/carrinho/Carrinho'
 import Catalogo from './pages/catalogo/Catalogo'
@@ -18,8 +18,6 @@ import ListarCategoria from './components/categoria/listarCategoria/ListarCatego
 import ListarProdutos from './components/produto/listarProdutos/ListarProdutos'
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria'
 import CadastrarCategoria from './components/categoria/cadastrarCategoria/CadastrarCategoria'
-import './App.css'
-import 'react-toastify/dist/ReactToastify.css'
 
 export default function App() {
   return (

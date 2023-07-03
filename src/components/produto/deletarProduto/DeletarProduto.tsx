@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { addToken } from '../../../store/tokens/action';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -8,14 +8,17 @@ import { buscaId, deleteId } from '../../../services/service';
 import { Typography, Button, Card, CardActions, CardContent } from "@material-ui/core";
 import Produto from '../../../models/Produto';
 import './DeletarProduto.css';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 
 function DeletarProduto() {
 
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const { id } = useParams<{ id: string }>()
-  const [token, setToken] = useState('')
   const [produto, setProduto] = useState<Produto>()
 
   useEffect(() => {
@@ -31,7 +34,7 @@ function DeletarProduto() {
         theme: "light",
       });
       navigate("/login")
-      dispatch(addToken(token));
+      dispatch(addToken(''));
 
     }
   }, [token])

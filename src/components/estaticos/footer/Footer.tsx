@@ -3,7 +3,6 @@ import './Footer.css'
 import { Box, Grid, Typography } from '@material-ui/core'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
-
 function Footer() {
   return (
     <>
@@ -13,28 +12,42 @@ function Footer() {
         justifyContent="center"
         alignContent="center"
       >
-        <Grid alignContent="center" item xs={12}>
-          <Box className='box1'>
-            <Box display="flex" alignItems='center' justifyContent='center'>
+          <Box className="box1">
+            <Grid item xs={12}>
+              <Box alignItems="center" justifyContent="start" className='logoFooter'>
               
-              <Typography variant="h5" align="center" gutterBottom className='textos'>
-                Siga-nos nas redes sociais
+                <Typography
+                  variant="h5"
+                  
+                  gutterBottom
+                  className="textoFooter"
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, accusantium ab vitae eligendi, quod voluptates minima odit possimus ex pariatur necessitatibus provident suscipit consectetur iste, repellendus eius? Voluptates, aliquam necessitatibus.
+                </Typography>
+              </Box>
+              
+            </Grid>
+            <Grid item xs={12} justifyContent='center'>
+            <Box className="box2">
+              <Box display="flex" alignItems="center" justifyContent="center">
+                <a href="https://https://github.com/GenerationProjects/da-terra-pra-mesa-frontend">
+                  <GitHubIcon className="redes" />
+                </a>
+              </Box>
+              <Typography
+                variant="subtitle2"
+                gutterBottom
+                align="center"
+                className="textoFooter"
+              >
+                Feito por Ana, Drika, Felipe, Gabriela e Wesley -
+                Alunos da Generation Brasil
               </Typography>
             </Box>
-            <Box display="flex" alignItems="center" justifyContent="center">
-              <a href="https://https://github.com/GenerationProjects/da-terra-pra-mesa-frontend">
-                <GitHubIcon className="redes" />
-              </a>
-            </Box>
-            <Box className='box2'>
-              <Typography variant='subtitle2' gutterBottom align='center' className='textos'>
-                Feito por Ana, Drika, Felipe, Gabriela, Giovanni e Wesley -
-                Alunos da Generation Brazil
-              </Typography>
-            </Box>
+            </Grid>
           </Box>
         </Grid>
-      </Grid>
+    
     </>
   )
 }

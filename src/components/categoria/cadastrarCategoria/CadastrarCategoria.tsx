@@ -5,17 +5,19 @@ import { Button, Container, TextField, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
 import { toast } from 'react-toastify';
 import './cadastroCategoria.css'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToken } from '../../../store/tokens/action';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 
 export default function CadastrarCategoria() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useState('');
     const [categoria, setCategoria] = useState<Categoria>({
         id: 0,
         tipo: '',
@@ -34,7 +36,7 @@ export default function CadastrarCategoria() {
                 progress: undefined,
                 theme: "light",
                 });
-            dispatch(addToken(token))  
+            dispatch(addToken(''))  
             navigate('/login')
         }
     }, [token])

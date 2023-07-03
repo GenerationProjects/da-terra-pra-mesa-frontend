@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { busca } from '../../../services/service';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,14 +7,17 @@ import { addToken } from '../../../store/tokens/action';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Produto from '../../../models/Produto';
 import './listarProdutos.css';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 
 export default function ListarProdutos() {
 
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
     const navigate = useNavigate()
     const dispatch = useDispatch()
     
     const [produtos, setProduto] = useState<Produto[]>([])
-    const [token, setToken] = useState('')
 
 
     useEffect(() => {
@@ -30,7 +33,7 @@ export default function ListarProdutos() {
                 theme: "light",
                 });
             navigate('/login')
-            dispatch(addToken(token));
+            dispatch(addToken(''));
         }
     }, [token])
 
