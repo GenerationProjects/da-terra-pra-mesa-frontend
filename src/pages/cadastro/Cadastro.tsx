@@ -66,7 +66,9 @@ export default function Cadastro() {
                 progress: undefined,
                 theme: "light",
             });
-
+            alert('Usuario cadastrado com sucesso')
+            navigate('/login')
+            
         } else {
             toast.warn('Dados inconsistentes. Favor verificar as informações de cadastro.', {
                 position: "top-right",

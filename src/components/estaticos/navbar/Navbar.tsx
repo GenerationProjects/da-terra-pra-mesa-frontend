@@ -18,6 +18,7 @@ export default function Navbar() {
     (state) => state.tokens
   );
 
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -35,13 +36,14 @@ export default function Navbar() {
       draggable: false,
       progress: undefined,
       theme: 'light'
-    })    
+    })
     dispatch(addToken(token))
     navigate('/login')
+
   }
 
   const [isActive, setIsActive] = useState(null)
-  
+
   const menuOpen = (event: any) => {
     setIsActive(event.currentTarget)
   }
@@ -129,7 +131,6 @@ export default function Navbar() {
                 </Box>
 
               </>) :
-
                 (<>
                   <Link to={'/cadastro'} className="text-decorator-none">
                     <MenuItem onClick={menuClose}>Criar Conta</MenuItem>
@@ -140,8 +141,6 @@ export default function Navbar() {
                   </Link></>
                 )
             }
-
-
           </Menu>
         </Box>
       </AppBar >

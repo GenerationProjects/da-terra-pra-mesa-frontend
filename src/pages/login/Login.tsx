@@ -12,6 +12,7 @@ import "./Login.css";
 
 export default function Login() {
 
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -51,6 +52,7 @@ export default function Login() {
                 progress: undefined,
                 theme: "light",
             });
+
         } catch (error) {
             toast.warn("Dados do usuário inconsistentes. Erro ao logar!", {
                 position: "top-right",

@@ -10,7 +10,6 @@ import Produto from '../../../models/Produto';
 import Categoria from '../../../models/Categoria';
 import './CadastroProduto.css';
 
-
 export default function CadastroProduto() {
 
     const navigate = useNavigate()
