@@ -1,0 +1,11 @@
+.btnAtualizarCat{
+    color: white;
+    background-color: #abbc75 !important;
+    font-weight: bold !important;
+}
+
+.btnDeletarCat{
+    color: black;
+    background-color: #e76565 !important;
+    font-weight: bold !important;
+}
