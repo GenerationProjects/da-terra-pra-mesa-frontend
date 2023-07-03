@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color:#505f29
 }
 
 .box-container-left h1 {
@@ -11,16 +12,18 @@
 }
 
 .box-container-right {
-    padding: 3rem;
-    width: 60%;
-    height: 28rem;
+    padding: 4rem;
+    width: 12cm;
+    height: 10cm;
     margin-left: 3rem;
     border-radius: 20px;
-    box-shadow: 5px 15px 20px 5px #bbcfa4;
+    box-shadow: 5px 15px 20px 5px #d5e0c6;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 1cm;
+    margin-left: 1cm;
 }
 
 .btn-caixa {
@@ -34,7 +37,7 @@
 }
 
 .btn-logar {
-    width: 20rem;
+    width: 15rem;
     height: 3.2rem;
     padding-left: 2rem;
     border-radius: 10px;
@@ -42,6 +45,8 @@
     align-items: center;
     color: #F6F8E8;
     background-color: #65743C;
+    margin-left: 1.4cm;
+    margin-right: 3cm;
 }
 
 .btn-logar:hover {
@@ -68,4 +73,8 @@
 .btn-arrow-logar:houver {
     cursor: pointer;
     background-color: #65743C;
+}
+
+.tituloEntrar{
+    color: #4f5c28;
 }

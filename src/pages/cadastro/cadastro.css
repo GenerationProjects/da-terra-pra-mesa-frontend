@@ -1,6 +1,12 @@
 .box-singUp{
-    background-color: #edf8d2;
+    background-color: #fdfdfd;
     border-radius: 30px;
+    width: 10cm;
+    height: 14cm;
+    margin-top: 1cm;
+    box-shadow: 5px 15px 20px 5px #e2e8d9;
+    margin-bottom: 1cm;
+    margin-left: 0.5cm;
 }
 
 .btnCancel{
@@ -13,18 +19,18 @@
 .btnCadastrar{
     margin-right: 20px !important;
     margin-bottom: 20px !important;
-    background-color: #708532 !important;
+    background-color: #2F3912 !important;
     color: #edf8d2 !important;
 }
 
 .textos2 {
-    padding: 10px;
-    font-weight: bold !important;
+    padding: 8px;
     font-size: 3rem !important;
     border-radius: 10px;
-    box-shadow: 10px #fdfcfb;
-    margin-bottom: 0.5px !important;
-    color: #778846;
+    box-shadow: 10px #ffffff;
+    margin-bottom: 0.8cm !important;
+    color: #4f5c28;
+
 }
 
 .imagemSignUp{

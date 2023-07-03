@@ -87,7 +87,7 @@ export default function Cadastro() {
         <> <Grid container direction='row' justifyContent='center' alignItems='center'>
             <Grid item xs={6} alignItems='center' ><img src={ImgCadas} alt="" className='imagemSignUp' /></Grid>
             <Grid item xs={6} alignItems='center'>
-                <Box paddingX={10} className='box-singUp'>
+                <Box paddingX={15} className='box-singUp'>
                     <form onSubmit={onSubmit}>
                         <Typography
                             variant="h3"

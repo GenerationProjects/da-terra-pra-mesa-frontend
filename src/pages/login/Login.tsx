@@ -94,12 +94,11 @@ export default function Login() {
 
                 <Grid xs={6} className="grid-right">
                     <Box className="box-container-right">
-                        <Box>
+                        <Box className='tituloEntrar'>
                             <form onSubmit={onSubmit}>
-                                <Typography
+                                <Typography 
                                     variant="h3"
                                     gutterBottom
-                                    color="textPrimary"
                                     component="h3"
                                     align="center"
                                 >
