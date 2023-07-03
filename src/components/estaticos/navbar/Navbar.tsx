@@ -14,14 +14,12 @@ import './Navbar.css'
 
 export default function Navbar() {
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
-
-
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
 
   const goLogout = () => {
     dispatch(addToken(''))

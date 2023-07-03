@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     root: {
         width: 245,
         boxShadow: "1px 2px 5px 1px #bbcfa4",
-        
+
     },
 });
 
@@ -36,28 +36,28 @@ export default function Catalogo() {
                         <Card className={classes.root}>
                             <CardActionArea>
                                 <div className='tamanhoDoCard'>
-                                <CardMedia
-                                    className='imgCardCat'
-                                    component="img"
-                                    alt="Contemplative Reptile"
-                                    height="150"
-                                    image={produto.imagem}
-                                    title="Contemplative Reptile"
-                                />
+                                    <CardMedia
+                                        className='imgCardCat'
+                                        component="img"
+                                        alt="Contemplative Reptile"
+                                        height="150"
+                                        image={produto.imagem}
+                                        title="Contemplative Reptile"
+                                    />
                                 </div>
                                 <CardContent className='nomeCard'>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         {produto.nome}
                                     </Typography>
                                     <div className='iconPreco'>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        R$ {produto.preco}
-                                    </Typography>
-                                    <CardActions className='btnCarrinhoBG'>
-                                        <Button size="small" className='btnCarrinho'>
-                                            <AddShoppingCartIcon />
-                                        </Button>
-                                    </CardActions>
+                                        <Typography variant="body2" color="textSecondary" component="p">
+                                            R$ {produto.preco.toFixed(2)}
+                                        </Typography>
+                                        <CardActions className='btnCarrinhoBG'>
+                                            <Button size="small" className='btnCarrinho'>
+                                                <AddShoppingCartIcon />
+                                            </Button>
+                                        </CardActions>
                                     </div>
                                 </CardContent>
                             </CardActionArea>

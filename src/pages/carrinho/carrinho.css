@@ -1,4 +1,3 @@
-
 #cart-container-section {
   padding: 20px 0;
 }
@@ -17,6 +16,7 @@
   padding: 0 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .dsc-cart-item-container img {
@@ -69,7 +69,7 @@
     padding-top: 10px;
   }
 
-  .dsc-cart-total-container h3 {
+  .dsc-cart-total-container {
     text-align: right;
   }
 }
