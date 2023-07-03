@@ -22,7 +22,7 @@
     cursor: pointer;
     color: #2F3912;
     font-family: var(--open-sans);
-    font-size: 1.5rem !important;
+    transition: all 200ms ease-in-out;
 }
 
 .cursor:hover {
@@ -34,7 +34,7 @@
 }
 
 .img-home {
-    height: 4.5rem;
+    height: 2.6rem;
     width: 4.5rem;
 }
 

@@ -64,21 +64,21 @@ export default function Navbar() {
           <Box display="flex">
             <Link to={`/`} className="text-decorator-none">
               <Box mx={1} className="p-1">
-                <Typography className="cursor">HOME</Typography>
+                <Typography variant='h6' className="cursor">HOME</Typography>
               </Box>
             </Link>
 
 
             <Link to={`/catalogo`} className="text-decorator-none">
               <Box mx={1} className="p-1">
-                <Typography className="cursor">CATÁLOGO</Typography>
+                <Typography variant='h6' className="cursor">CATÁLOGO</Typography>
               </Box>
             </Link>
             {token !== "" ? (
               <>
                 <Link to={`/cadastrarProduto`} className="text-decorator-none">
                   <Box mx={1} className="p-1">
-                    <Typography className="cursor">
+                    <Typography variant='h6' className="cursor">
                       VENDA CONOSCO
                     </Typography>
                   </Box>
@@ -86,7 +86,7 @@ export default function Navbar() {
 
                 <Link to={`/cadastrarCategoria`} className="text-decorator-none">
                   <Box mx={1} className="p-1">
-                    <Typography className="cursor">
+                    <Typography variant='h6' className="cursor">
                       CRIE CATEGORIA
                     </Typography>
                   </Box>
@@ -94,7 +94,7 @@ export default function Navbar() {
               </>) : (<>
                 <Link to={`/sobre`} className="text-decorator-none">
                   <Box mx={1} className="p-1">
-                    <Typography className="cursor">SOBRE NÓS</Typography>
+                    <Typography variant='h6' className="cursor">SOBRE NÓS</Typography>
                   </Box>
                 </Link>
               </>)
