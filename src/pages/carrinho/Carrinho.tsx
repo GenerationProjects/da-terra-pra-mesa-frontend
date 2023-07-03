@@ -11,6 +11,8 @@ export default function Carrinho() {
 
                     </CardContent>
                 </Card>
+
+                
             </Box>
         </>
     )
