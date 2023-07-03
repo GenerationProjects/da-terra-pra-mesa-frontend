@@ -5,6 +5,7 @@ import Produto from '../../models/Produto';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import './catalogo.css'
 
+
 const useStyles = makeStyles({
     root: {
         width: 245,

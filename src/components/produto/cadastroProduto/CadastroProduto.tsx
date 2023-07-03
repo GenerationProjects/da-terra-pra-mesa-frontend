@@ -1,19 +1,25 @@
-import { useNavigate, useParams } from 'react-router-dom'
-import { ChangeEvent, useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToken } from '../../../store/tokens/action';
+import { ChangeEvent, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { TokenState } from '../../../store/tokens/tokenReducer';
 import { busca, buscaId, post, put } from '../../../services/service';
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core";
 import Produto from '../../../models/Produto';
 import Categoria from '../../../models/Categoria';
-import useLocalStorage from 'react-use-localstorage';
-import { toast } from 'react-toastify';
 import './CadastroProduto.css';
 
 export default function CadastroProduto() {
 
-    const navigate = useNavigate();
-    const { id } = useParams<{ id: string }>();
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const { id } = useParams<{ id: string }>()
     const [categorias, setCategorias] = useState<Categoria[]>([])
-    const [token, setToken] = useLocalStorage('token');
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {
@@ -27,8 +33,9 @@ export default function CadastroProduto() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
             navigate("/login")
+            dispatch(addToken(token));
 
         }
     }, [token])
@@ -111,7 +118,7 @@ export default function CadastroProduto() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         } else {
 
@@ -129,7 +136,7 @@ export default function CadastroProduto() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         }
         back()

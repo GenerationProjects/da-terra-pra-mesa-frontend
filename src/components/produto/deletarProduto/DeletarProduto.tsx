@@ -1,72 +1,82 @@
-import React, { useEffect, useState } from 'react'
-import {Typography, Button, Card, CardActions, CardContent } from "@material-ui/core"
-import {Box} from '@mui/material';
-import './DeletarProduto.css';
-import {useNavigate, useParams } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage';
-import Produto from '../../../models/Produto';
-import { buscaId, deleteId } from '../../../services/service';
+import { Box } from '@mui/material';
 import { toast } from 'react-toastify';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToken } from '../../../store/tokens/action';
+import { useNavigate, useParams } from 'react-router-dom';
+import { buscaId, deleteId } from '../../../services/service';
+import { TokenState } from '../../../store/tokens/tokenReducer';
+import { Typography, Button, Card, CardActions, CardContent } from "@material-ui/core";
+import Produto from '../../../models/Produto';
+import './DeletarProduto.css';
 
 function DeletarProduto() {
-    const navigate = useNavigate();
-    const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token');
-    const [produto, setProduto] = useState<Produto>()
 
-    useEffect(() => {
-        if (token == "") {
-            toast.warn('Você precisa estar logado!', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: false,
-              progress: undefined,
-              theme: "light",
-              });
-            navigate("/login")
-    
-        }
-    }, [token])
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
 
-    useEffect(() =>{
-        if(id !== undefined){
-            findById(id)
-        }
-    }, [id])
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
-    async function findById(id: string) {
-        buscaId(`/produtos/${id}`, setProduto, {
-            headers: {
-              'Authorization': token
-            }
-          })
-        }
 
-        function sim() {
-          navigate('/produtos')
-            deleteId(`/produtos/${id}`, {
-              headers: {
-                'Authorization': token
-              }
-            });
-            toast.success('Produto deletado com sucesso!', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: false,
-              progress: undefined,
-              theme: "light",
-              });
-          }
-        
-          function nao() {
-            navigate('/produtos')
-          }
+  const [produto, setProduto] = useState<Produto>()
+
+  useEffect(() => {
+    if (token == "") {
+      toast.warn('Você precisa estar logado!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
+      navigate("/login")
+      dispatch(addToken(token));
+
+    }
+  }, [token])
+
+  useEffect(() => {
+    if (id !== undefined) {
+      findById(id)
+    }
+  }, [id])
+
+  async function findById(id: string) {
+    buscaId(`/produtos/${id}`, setProduto, {
+      headers: {
+        'Authorization': token
+      }
+    })
+  }
+
+  function sim() {
+    navigate('/produtos')
+    deleteId(`/produtos/${id}`, {
+      headers: {
+        'Authorization': token
+      }
+    });
+    toast.success('Produto deletado com sucesso!', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: "light",
+    });
+  }
+
+  function nao() {
+    navigate('/produtos')
+  }
   return (
     <>
       <Box m={2}>
@@ -77,7 +87,7 @@ function DeletarProduto() {
                 Deseja deletar o Produto:
               </Typography>
               <Typography color="textSecondary" >
-              {produto?.nome}
+                {produto?.nome}
               </Typography>
             </Box>
 
@@ -85,14 +95,14 @@ function DeletarProduto() {
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-              <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
-                Sim
-              </Button>
+                <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
+                  Sim
+                </Button>
               </Box>
               <Box>
-              <Button  onClick={nao} variant="contained" size='large' color="secondary">
-                Não
-              </Button>
+                <Button onClick={nao} variant="contained" size='large' color="secondary">
+                  Não
+                </Button>
               </Box>
             </Box>
           </CardActions>

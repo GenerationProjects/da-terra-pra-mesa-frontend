@@ -1,17 +1,20 @@
-import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
-import { Link, useNavigate } from "react-router-dom";
-import { ChangeEvent, useEffect, useState } from "react";
+import { toast } from 'react-toastify';
+import { useDispatch } from "react-redux";
 import { login } from "../../services/service";
+import { Link, useNavigate } from "react-router-dom";
+import { addToken } from "../../store/tokens/action";
+import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
+import { ChangeEvent, useEffect, useState } from "react";
 import ImgLogin from "../../assets/img/login-img.svg";
-import useLocalStorage from "react-use-localstorage";
 import UsuarioLogin from "../../models/UsuarioLogin";
-import { toast } from 'react-toastify'
-import "./login.css";
+import "./Login.css";
 
 export default function Login() {
 
-    const navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const [token, setToken] = useState('')
     const [usuarioLogin, setUserLogin] = useState<UsuarioLogin>(
         {
             id: 0,
@@ -31,7 +34,8 @@ export default function Login() {
 
     useEffect(() => {
         if (token != '') {
-            navigate('/')
+            dispatch(addToken(token))
+            navigate('/home')
         }
     }, [token])
 
@@ -49,7 +53,7 @@ export default function Login() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
 
         } catch (error) {
             toast.warn('Dados do usuário inconsistentes. Erro ao logar!', {
@@ -61,7 +65,7 @@ export default function Login() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-                });
+            });
         }
     }
 
