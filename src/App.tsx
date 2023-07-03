@@ -26,7 +26,7 @@ export default function App() {
       <BrowserRouter>
         <ToastContainer />
         <Navbar />
-        <div className='corpo'>
+        <div className='div.corpo'>
           <Routes>
               {/*Rotas comuns */}
               <Route path='/' element={<Home />} />
