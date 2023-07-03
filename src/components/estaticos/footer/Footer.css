@@ -1,10 +1,39 @@
 .box1{
   background-color: #D5E4AD;
+  display: flex;
+  width: 100%;
+  height: 8rem;
 }
 
-.textos{
+.boxLogo {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-direction: row;
+  
+}
+
+.logoFooter {
+  width: 8rem;
+}
+
+.box2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 7.5rem;
+  justify-content: space-between;
+}
+
+.textoFooter{
   color: #65743C;
+  font-size: 20px !important;
   font-weight: bold !important;
+  margin-top: 1rem !important;
+}
+
+.boxDev {
+  display: flex;
 }
 
 .redes{
@@ -13,8 +42,18 @@
   padding: 1px;
 }
 
-.box2{
-  background-color: #D5E4AD;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+.itemLista a {
+
+  width: 9rem;
+  display: flex ;
+  flex-direction: row;  
+  align-items: flex-end;
+  justify-content: center;
+  color: #65743C;
+  font-size: 1.2rem !important;
+ text-decoration: none;
+}
+
+.boxListaImg {
+
 }

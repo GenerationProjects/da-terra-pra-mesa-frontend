@@ -32,8 +32,7 @@ export default function ListarCategoria() {
                 draggable: false,
                 progress: undefined,
                 theme: "light",
-            });
-
+                });
             dispatch(addToken(token))
             navigate("/login")
         }

@@ -11,6 +11,7 @@ import Produto from '../../../models/Produto';
 import './DeletarProduto.css';
 
 function DeletarProduto() {
+
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();

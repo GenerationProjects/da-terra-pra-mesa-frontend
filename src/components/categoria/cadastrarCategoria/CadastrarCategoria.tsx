@@ -9,6 +9,7 @@ import { Button, Container, TextField, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
 import './cadastroCategoria.css';
 
+
 export default function CadastrarCategoria() {
 
     const navigate = useNavigate()

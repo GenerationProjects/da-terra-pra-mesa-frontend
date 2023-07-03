@@ -1,8 +1,18 @@
 import React from 'react'
 import './Footer.css'
-import { Box, Grid, Typography } from '@material-ui/core'
+import {
+  Box,
+  Grid,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Typography
+} from '@material-ui/core'
 import GitHubIcon from '@material-ui/icons/GitHub'
-
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import LogoFooter from '../../../assets/img/logo footer.svg'
 
 function Footer() {
   return (
@@ -12,28 +22,75 @@ function Footer() {
         direction="row"
         justifyContent="center"
         alignContent="center"
+        xs={12}
       >
-        <Grid alignContent="center" item xs={12}>
-          <Box className='box1'>
-            <Box display="flex" alignItems='center' justifyContent='center'>
-              
-              <Typography variant="h5" align="center" gutterBottom className='textos'>
-                Siga-nos nas redes sociais
+        <Box className="box1">
+          <Grid item xs={5}>
+            <Box alignItems="center" justifyContent="start" className="boxLogo">
+              <img src={LogoFooter} alt="" className="logoFooter" />
+            </Box>
+          </Grid>
+
+          <Grid item xs={7} justifyContent="center">
+            <Box className="box2">
+              <Typography
+                variant="h6"
+                gutterBottom
+                align="center"
+                className="textoFooter"
+              >
+                Time de desenvolvedores:
               </Typography>
+              <Box className='boxDev'>
+              <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Adriana
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+              <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Felipe
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+                <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Ana Rosa
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+                <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Gabriela
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+                <ListItem className="itemLista">
+                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
+                      Wesley
+                      <ListItemIcon className="boxListaImg">
+                        <LinkedInIcon />
+                        <GitHubIcon/>
+                      </ListItemIcon>                    
+                  </a>
+                </ListItem>
+                </Box>
             </Box>
-            <Box display="flex" alignItems="center" justifyContent="center">
-              <a href="https://https://github.com/GenerationProjects/da-terra-pra-mesa-frontend">
-                <GitHubIcon className="redes" />
-              </a>
-            </Box>
-            <Box className='box2'>
-              <Typography variant='subtitle2' gutterBottom align='center' className='textos'>
-                Feito por Ana, Drika, Felipe, Gabriela, Giovanni e Wesley -
-                Alunos da Generation Brazil
-              </Typography>
-            </Box>
-          </Box>
-        </Grid>
+          </Grid>
+        </Box>
       </Grid>
     </>
   )
