@@ -1,7 +1,19 @@
-.img-produto{
+.img-produto {
     margin: 0;
     padding: 0;
-    width: 15rem;
+    width: 3cm;
     max-width: 100%;
-    height: 50px;
+    height: 3cm;
+}
+
+.btnAtualizarProd {
+    color: white;
+    background-color: #abbc75 !important;
+    font-weight: bold !important;
+}
+
+.btnDeletarProd {
+    color: black;
+    background-color: #e76565 !important;
+    font-weight: bold !important;
 }

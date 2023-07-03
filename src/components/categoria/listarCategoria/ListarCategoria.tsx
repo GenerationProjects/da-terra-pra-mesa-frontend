@@ -57,7 +57,7 @@ export default function ListarCategoria() {
                 <Box m={2} >
                     <Card variant="outlined">
                         <CardContent>
-                            <Typography color="textSecondary" gutterBottom>
+                            <Typography color="textPrimary" gutterBottom>
                                 Categoria
                             </Typography>
                             <Typography variant="h5" component="h2">
@@ -72,14 +72,14 @@ export default function ListarCategoria() {
 
                                 <Link to={`/cadastrarCategoria/${categoria.id}`} className="text-decorator-none">
                                     <Box mx={1}>
-                                        <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                        <Button variant="contained" size='small' className='btnAtualizarCat' >
                                             atualizar
                                         </Button>
                                     </Box>
                                 </Link>
                                 <Link to={`/deletarCategoria/${categoria.id}`} className="text-decorator-none">
                                     <Box mx={1}>
-                                        <Button variant="contained" size='small' color="secondary">
+                                        <Button variant="contained" size='small' className='btnDeletarCat'>
                                             deletar
                                         </Button>
                                     </Box>

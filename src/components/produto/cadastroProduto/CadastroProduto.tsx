@@ -153,7 +153,7 @@ export default function CadastroProduto() {
 
             <form onSubmit={onSubmit}>
 
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastre Seu Produto</Typography>
+                <Typography variant="h3" className='tituloCadProd' component="h1" align="center" >Cadastre seu Produto</Typography>
                 <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="Nome Do Produto" variant="outlined" name="nome" type="text" margin="normal" fullWidth />
                 <TextField value={produto.preco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="preco" label="preço" name="preco" variant="outlined" type="number" margin="normal" fullWidth />
                 <TextField value={produto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="descricao" label="descrição" name="descricao" type="text" variant="outlined" margin="normal" fullWidth />
@@ -177,7 +177,7 @@ export default function CadastroProduto() {
                         }
                     </Select>
                     <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" className='btnFinalizarProd'>
                         Finalizar
                     </Button>
                 </FormControl>

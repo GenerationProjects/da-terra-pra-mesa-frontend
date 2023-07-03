@@ -118,12 +118,12 @@ export default function CadastrarCategoria() {
 
     return (
         <>
-            <Container maxWidth="sm" className="topo">
+            <Container maxWidth="sm" className="topo2">
                 <form onSubmit={onSubmit}>
-                    <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastro de Categorias</Typography>
+                    <Typography variant="h3" className='tituloCadCat' component="h1" align="center" >Cadastro de Categorias</Typography>
                     <TextField value={categoria.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updateCategoria(e)} id="tipo" label="Tipo" variant="outlined" name="tipo" margin="normal" fullWidth />
                     <TextField value={categoria.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updateCategoria(e)} id="descricao" label="Descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" className='btnFinalizarCat' >
                         Finalizar
                     </Button>
                 </form>
