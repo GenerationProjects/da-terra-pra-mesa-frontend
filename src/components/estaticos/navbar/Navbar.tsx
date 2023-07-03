@@ -24,11 +24,7 @@ export default function Navbar() {
 
 
   const goLogout = () => {
-
     dispatch(addToken(''))
-    navigate('/login')
-
-
     toast.success('Usuário deslogado!', {
       position: 'top-right',
       autoClose: 2000,
@@ -39,9 +35,7 @@ export default function Navbar() {
       progress: undefined,
       theme: 'light'
     })
-    dispatch(addToken(token))
     navigate('/login')
-
   }
 
   const [isActive, setIsActive] = useState(null)
