@@ -3,11 +3,8 @@ import './Footer.css'
 import {
   Box,
   Grid,
-  Link,
-  List,
   ListItem,
   ListItemIcon,
-  ListItemText,
   Typography
 } from '@material-ui/core'
 import GitHubIcon from '@material-ui/icons/GitHub'
@@ -41,56 +38,84 @@ function Footer() {
               >
                 Time de desenvolvedores:
               </Typography>
-              <Box className='boxDev'>
-              <ListItem className="itemLista">
-                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
-                      Adriana
-                      <ListItemIcon className="boxListaImg">
-                        <LinkedInIcon />
-                        <GitHubIcon/>
-                      </ListItemIcon>                    
-                  </a>
-                </ListItem>
-              <ListItem className="itemLista">
-                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
-                      Felipe
-                      <ListItemIcon className="boxListaImg">
-                        <LinkedInIcon />
-                        <GitHubIcon/>
-                      </ListItemIcon>                    
-                  </a>
+              <Box className="boxDev">
+                <ListItem className="itemLista">
+                  <Typography className='textoLista'>Adriana</Typography>
+                  <ListItemIcon>
+                    <a
+                      href="https://www.linkedin.com/in/drikadev/"
+                      target="_blank"
+                    >
+                      <LinkedInIcon />
+                    </a>
+                    <a href="https://github.com/DrikaDev" target="_blank">
+                      <GitHubIcon />
+                    </a>
+                  </ListItemIcon>
                 </ListItem>
                 <ListItem className="itemLista">
-                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
-                      Ana Rosa
-                      <ListItemIcon className="boxListaImg">
-                        <LinkedInIcon />
-                        <GitHubIcon/>
-                      </ListItemIcon>                    
-                  </a>
+                  <Typography className='textoLista'>Ana Rosa</Typography>
+                  <ListItemIcon className="boxListaImg">
+                    <a
+                      href="https://www.linkedin.com/in/anarosafernandes/"
+                      target="_blank"
+                    >
+                      <LinkedInIcon />
+                    </a>
+                    <a href="https://github.com/hyarmen" target="_blank">
+                      <GitHubIcon />
+                    </a>
+                  </ListItemIcon>
                 </ListItem>
                 <ListItem className="itemLista">
-                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
-                      Gabriela
-                      <ListItemIcon className="boxListaImg">
-                        <LinkedInIcon />
-                        <GitHubIcon/>
-                      </ListItemIcon>                    
-                  </a>
+                  <Typography className='textoLista'>Gabriela</Typography>
+                  <ListItemIcon className="boxListaImg">
+                    <a
+                      href="https://www.linkedin.com/in/gabriela-rodrigues-souza/"
+                      target="_blank"
+                    >
+                      <LinkedInIcon />
+                    </a>
+                    <a href="https://github.com/gaabrielarod" target="_blank">
+                      <GitHubIcon />
+                    </a>
+                  </ListItemIcon>
                 </ListItem>
                 <ListItem className="itemLista">
-                  <a href="www.linkedin.com/in/drikadev/" target="_blank">                    
-                      Wesley
-                      <ListItemIcon className="boxListaImg">
-                        <LinkedInIcon />
-                        <GitHubIcon/>
-                      </ListItemIcon>                    
-                  </a>
+                  <Typography className='textoLista'>Felipe</Typography>
+                  <ListItemIcon className="boxListaImg">
+                    <a
+                      href="https://www.linkedin.com/in/felipesdsilva/"
+                      target="_blank"
+                    >
+                      <LinkedInIcon />
+                    </a>
+                    <a href="https://github.com/FelipeSdsilva" target="_blank">
+                      <GitHubIcon />
+                    </a>
+                  </ListItemIcon>
                 </ListItem>
-                </Box>
+                <ListItem className="itemLista">
+                  <Typography className='textoLista'>Wesley</Typography>
+                  <ListItemIcon className="boxListaImg">
+                    <a href="www.linkedin.com/in/wesleygaspar" target="_blank">
+                      <LinkedInIcon />
+                    </a>
+                    <a href="https://github.com/wmgaspar" target="_blank">
+                      <GitHubIcon />
+                    </a>
+                  </ListItemIcon>
+                </ListItem>
+              </Box>
             </Box>
           </Grid>
+          
         </Box>
+        <Grid item xs={12}>
+            <Box>
+            <Typography className="copyright">Copyright © 2023 All Rights Reserved by Da Terra Pra Mesa.</Typography>
+            </Box>
+          </Grid>
       </Grid>
     </>
   )
