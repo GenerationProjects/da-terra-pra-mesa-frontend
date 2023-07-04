@@ -6,7 +6,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { Box, Button, Grid, TextField } from '@material-ui/core';
 import Usuario from '../../models/Usuario';
 import ImgCadas from '../../assets/img/cadastro.svg';
-import './Cadastro.css';
+import './cadastro.css';
 
 
 export default function Cadastro() {
