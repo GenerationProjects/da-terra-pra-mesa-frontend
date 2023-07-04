@@ -71,3 +71,92 @@
 .grid-item {
     padding: 0 3rem ;
 }
+
+/* section das ongs*/
+.box-ongs {
+    display: flex;
+    justify-content: center;
+    background-color: #D5E4AD;
+}
+
+.titulo-sec-ong {
+    text-align: center;
+    color: #2F3912;
+    font-family: var(--quicksand) !important;
+    font-weight: 700 !important;
+}
+
+.ong-img {
+    width: 13rem;
+    margin: 2rem 3rem;
+    border-radius: 100%;
+}
+
+.box-container2 {
+    margin: 2rem;
+    border-radius: 10px;
+    background-color: #D5E4AD;
+}
+
+.grid-container2 {
+    height: 70vh;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.grid-container3 {
+    display: flex !important;
+    flex-direction: row !important;
+    height: 70vh;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.box-container3 {
+    display: flex !important;
+    flex-direction: row !important;
+    margin: 2rem;
+    border-radius: 10px;
+    background-color: #D5E4AD;
+}
+
+.img-config2 {
+    display: block;
+    margin: 0 auto;
+    width: 25rem;
+}
+
+.title-ODS {
+    padding-bottom: 20px;
+    font-family: var(--quicksand) !important;
+    font-weight: 700 !important;
+    text-align: right;
+}
+
+.subHomeODS {
+    font-family: var(--quicksand);
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.btn-sobre {
+    width: 20rem;
+    height: 3.2rem;
+    padding-left: 2rem;
+    border-radius: 10px;
+    margin: 5rem 0 0 11.5rem;
+    display: flex;
+    font-family: var(--quicksand);
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    color: #F6F8E8;
+    background-color: #65743C;
+    transition: all 200ms ease-in-out;
+}
+
+.btn-sobre:hover {
+    cursor: pointer;
+    background-color: #2F3912;
+}
