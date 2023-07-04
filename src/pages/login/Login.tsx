@@ -8,7 +8,7 @@ import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import Arrow from "../../assets/img/Seta.svg";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import ImgLogin from "../../assets/img/login-img.svg";
-import "./Login.css";
+import "./login.css";
 
 export default function Login() {
 
