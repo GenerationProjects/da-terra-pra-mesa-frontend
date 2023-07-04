@@ -7,7 +7,7 @@ import { addToken } from '../../../store/tokens/action';
 import { TokenState } from '../../../store/tokens/tokenReducer';
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import Categoria from '../../../models/Categoria';
-import './ListarCategoria.css';
+import './listarCategoria.css';
 
 
 export default function ListarCategoria() {
