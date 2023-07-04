@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@material-ui/core";
 import Agricultores from "../../assets/img/Agricultores.jpg";
-import "./Sobre.css";
+import "./sobre.css";
 
 
 export default function Sobre() {
