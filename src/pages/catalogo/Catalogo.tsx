@@ -20,7 +20,6 @@ const useStyles = makeStyles({
 
 export default function Catalogo() {
 
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const classes = useStyles();
