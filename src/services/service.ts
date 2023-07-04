@@ -24,6 +24,11 @@ export const buscaSimples = async (url: any, setDado: any) => {
     setDado(resposta.data)
 }
 
+export const buscaIdSimples = async (url: any, setDado: any) => {
+    const resposta = await api.get(url)
+    setDado(resposta.data)
+}
+
 
 export const buscaId = async (url: any, setDado: any, header: any) => {
     const resposta = await api.get(url, header)

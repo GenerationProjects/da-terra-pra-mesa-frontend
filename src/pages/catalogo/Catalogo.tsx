@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { buscaSimples } from '../../services/service';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { buscaIdSimples, buscaSimples } from '../../services/service';
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography, makeStyles } from '@material-ui/core'
 import Produto from '../../models/Produto';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import './catalogo.css'
+import FormatDeValor from '../../utils/FormatDeValor';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/tokens/action';
 
 
 const useStyles = makeStyles({
@@ -16,11 +20,35 @@ const useStyles = makeStyles({
 
 export default function Catalogo() {
 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const classes = useStyles();
-    const [produtos, setProduto] = useState<Produto[]>([])
+
+    const [produtos, setProdutos] = useState<Produto[]>([]);
+    const [produto, setProduto] = useState<Produto>({
+        id: 0,
+        nome: '',
+        preco: 0,
+        descricao: '',
+        quantidade: 0,
+        imagem: ''
+    })
 
     async function getCatalogo() {
-        await buscaSimples('/view-produtos', setProduto)
+        await buscaSimples('/view-produtos', setProdutos)
+    }
+
+
+    async function getProdutoUnico(id: string) {
+        try {
+            await buscaIdSimples(`/view-produtos/${id}`, setProduto);
+            dispatch(addToCart(produto))
+            console.log(produto);
+        } catch (error) {
+            console.log(error);
+        }
+
     }
 
     useEffect(() => {
@@ -39,10 +67,9 @@ export default function Catalogo() {
                                     <CardMedia
                                         className='imgCardCat'
                                         component="img"
-                                        alt="Contemplative Reptile"
+                                        alt={produto.nome}
                                         height="150"
                                         image={produto.imagem}
-                                        title="Contemplative Reptile"
                                     />
                                 </div>
                                 <CardContent className='nomeCard'>
@@ -51,10 +78,10 @@ export default function Catalogo() {
                                     </Typography>
                                     <div className='iconPreco'>
                                         <Typography variant="body2" color="textSecondary" component="p">
-                                            R$ {produto.preco.toFixed(2)}
+                                            R$ {FormatDeValor(produto.preco)}
                                         </Typography>
                                         <CardActions className='btnCarrinhoBG'>
-                                            <Button size="small" className='btnCarrinho'>
+                                            <Button size="small" className='btnCarrinho' onClick={() => getProdutoUnico(produto.id.toString())} >
                                                 <AddShoppingCartIcon />
                                             </Button>
                                         </CardActions>
@@ -66,7 +93,7 @@ export default function Catalogo() {
                     </Grid>
                 ))
                 }
-            </Grid>
+            </Grid >
         </>
     )
 }

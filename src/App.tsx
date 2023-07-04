@@ -22,12 +22,12 @@ import CadastrarCategoria from './components/categoria/cadastrarCategoria/Cadast
 export default function App() {
   return (
     <>
-    <Provider store={store}>
-      <BrowserRouter>
-        <ToastContainer />
-        <Navbar />
-        <div className='div.corpo'>
-          <Routes>
+      <Provider store={store}>
+        <BrowserRouter>
+          <ToastContainer />
+          <Navbar />
+          <div className='div.corpo'>
+            <Routes>
               {/*Rotas comuns */}
               <Route path='/' element={<Home />} />
               <Route path='/cadastro' element={<Cadastro />} />
