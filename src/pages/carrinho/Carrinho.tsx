@@ -61,7 +61,7 @@ export default function Carrinho() {
         <>
             <Box m={2} display="flex" justifyContent="center">
                 <Card variant="outlined" className='cardContainer'>
-                    {console.log(carrinho.map(produto => (
+                    {carrinho.map(produto => (
                         <>
 
                             <div className='cardProduct'>
@@ -96,7 +96,7 @@ export default function Carrinho() {
                                 </div>
                             </div>
                         </>
-                    )))}
+                    ))}
                     <div>
                         <div>
                             <Typography variant="body2" component="p">

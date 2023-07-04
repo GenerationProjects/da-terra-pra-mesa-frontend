@@ -1,6 +1,6 @@
 import Produto from "../../models/Produto"
 
-export type Action = { type: "ADD_TOKEN" | 'REMOVE_ITEM' | 'ADD_TO_CART', payload: any }
+export type Action = { type: 'ADD_TO_CART' | "ADD_TOKEN" | 'REMOVE_ITEM', payload: any }
 
 export const addToken = (token: string): Action => ({ type: "ADD_TOKEN", payload: token })
 

@@ -39,11 +39,15 @@ export default function Catalogo() {
         await buscaSimples('/view-produtos', setProdutos)
     }
 
+    async function adicionarCarrinho() {
+        dispatch(addToCart(produto))
+    }
+
 
     async function getProdutoUnico(id: string) {
         try {
             await buscaIdSimples(`/view-produtos/${id}`, setProduto);
-            dispatch(addToCart(produto))
+
             console.log(produto);
         } catch (error) {
             console.log(error);
@@ -81,7 +85,7 @@ export default function Catalogo() {
                                             R$ {FormatDeValor(produto.preco)}
                                         </Typography>
                                         <CardActions className='btnCarrinhoBG'>
-                                            <Button size="small" className='btnCarrinho' onClick={() => getProdutoUnico(produto.id.toString())} >
+                                            <Button size="small" className='btnCarrinho' onClick={adicionarCarrinho} >
                                                 <AddShoppingCartIcon />
                                             </Button>
                                         </CardActions>

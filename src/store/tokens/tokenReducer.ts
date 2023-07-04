@@ -20,7 +20,6 @@ export const tokenReducer = (state: TokenState = initialState, action: Action) =
       return {
         ...state, produtos: [...state.produtos, action.payload]
       }
-
     }
     case 'REMOVE_ITEM': {
       return {
