@@ -7,7 +7,7 @@ import ong2 from '../../assets/img/ongs/Temos Fome.jpg'
 import ong3 from '../../assets/img/ongs/Borcelle.jpg'
 import ong4 from '../../assets/img/ongs/Faustino Social.jpg'
 import sobreImg from '../../assets/img/coffee farm-amico.svg'
-import './Home.css'
+import './home.css'
 
 export default function Home() {
 
