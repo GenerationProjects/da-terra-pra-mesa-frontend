@@ -51,7 +51,6 @@ export default function Carrinho() {
     }
 
     function confirmSales() {
-        if
         alert("Compra Confirmada! Verifique o seu email!")
         navigate("/catalogo")
     }
