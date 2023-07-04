@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "https://projeto-da-terra-pra-mesa.onrender.com"
+    baseURL: import.meta.env.VITE_API_URL
 })
 
 export const login = async (url: any, dados: any, setDado: any) => {
