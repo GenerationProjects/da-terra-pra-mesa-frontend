@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Box, Button, Card, TextField, Typography } from '@material-ui/core';
 import Produto from '../../models/Produto';
 import FormatDeValor from '../../utils/FormatDeValor';
-import './Carrinho.css';
+import './carrinho.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokenReducer';
 
