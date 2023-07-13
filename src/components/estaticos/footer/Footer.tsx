@@ -97,7 +97,7 @@ function Footer() {
                 <ListItem className="itemLista">
                   <Typography className='textoLista'>Wesley</Typography>
                   <ListItemIcon className="boxListaImg">
-                    <a href="www.linkedin.com/in/wesleygaspar" target="_blank">
+                    <a href="https://www.linkedin.com/in/wesleygaspar" target="_blank">
                       <LinkedInIcon />
                     </a>
                     <a href="https://github.com/wmgaspar" target="_blank">
